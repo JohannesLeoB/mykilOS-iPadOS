@@ -16,6 +16,9 @@ struct ContentView: View {
                 NavigationLink("Grundriss-Editor") {
                     GrundrissEditorScreen(store: grundrissStore, dokument: GrundrissDokument())
                 }
+                NavigationLink("Foto-Bemaßung") {
+                    FotoBemassungView(aufmassStore: aufmassStore)
+                }
                 NavigationLink("RoomPlan-Aufmaß (LiDAR)") {
                     RoomPlanCaptureScreen(roomPlanStore: roomPlanStore)
                 }
