@@ -39,6 +39,7 @@ targets:
         NSPhotoLibraryAddUsageDescription: "mykilOS speichert Aufmaß-Fotos und PDF-Exporte in deiner Fotomediathek, wenn du das auswählst."
         NSLocalNetworkUsageDescription: "mykilOS sucht im lokalen Netzwerk nach unterstützten Messgeräten."
         NSMotionUsageDescription: "mykilOS nutzt die Bewegungssensoren für die Kamera-Wasserwaage beim Aufmaß."
+        NSLocationWhenInUseUsageDescription: "mykilOS merkt sich den Standort eines Feld-Fotos als Teil der Beweiskette — nur beim Aufnehmen, kein Tracking."
         UIFileSharingEnabled: true
         LSSupportsOpeningDocumentsInPlace: true
         UIAppFonts:

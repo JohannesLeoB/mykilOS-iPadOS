@@ -5,22 +5,24 @@ import SwiftUI
 /// mykilOS-CI (siehe `mykilos-core`-Skill: schwarze Sidebar, aktiv = 3px
 /// weißer Balken links, helle Inhaltsfläche, Großbuchstaben-Mono-Labels).
 enum AppModul: String, CaseIterable, Identifiable {
-    case heute, projekte, grundriss, fotoBemassung, roomPlan, raumscans, verbindungen
+    case heute, fang, feldFotos, projekte, grundriss, fotoBemassung, roomPlan, raumscans, verbindungen
 
     var id: String { rawValue }
 
     var sektion: String {
         switch self {
         case .heute: return "01"
-        case .projekte: return "02"
-        case .grundriss, .fotoBemassung, .roomPlan, .raumscans: return "03"
-        case .verbindungen: return "04"
+        case .fang, .feldFotos: return "02"
+        case .projekte: return "03"
+        case .grundriss, .fotoBemassung, .roomPlan, .raumscans: return "04"
+        case .verbindungen: return "05"
         }
     }
 
     var sektionsTitel: String {
         switch self {
         case .heute: return "HEUTE"
+        case .fang, .feldFotos: return "FANG"
         case .projekte: return "PROJEKTE"
         case .grundriss, .fotoBemassung, .roomPlan, .raumscans: return "AUFMASS"
         case .verbindungen: return "VERBINDUNGEN"
@@ -30,6 +32,8 @@ enum AppModul: String, CaseIterable, Identifiable {
     var titel: String {
         switch self {
         case .heute: return "Heute"
+        case .fang: return "Fang"
+        case .feldFotos: return "Feld-Fotos"
         case .projekte: return "Projekte"
         case .grundriss: return "Grundriss-Editor"
         case .fotoBemassung: return "Foto-Bemaßung"
@@ -42,6 +46,8 @@ enum AppModul: String, CaseIterable, Identifiable {
     var sfName: String {
         switch self {
         case .heute: return "sun.max"
+        case .fang: return "waveform"
+        case .feldFotos: return "photo.stack"
         case .projekte: return "folder"
         case .grundriss: return "square.on.square.dashed"
         case .fotoBemassung: return "camera.viewfinder"
@@ -135,7 +141,7 @@ struct AppShell: View {
     private struct ModulGruppe { let sektion: String; let titel: String; var module: [AppModul] }
 
     private var gruppierteSektionen: [ModulGruppe] {
-        let reihenfolge: [AppModul] = [.heute, .projekte, .grundriss, .fotoBemassung, .roomPlan, .raumscans, .verbindungen]
+        let reihenfolge: [AppModul] = [.heute, .fang, .feldFotos, .projekte, .grundriss, .fotoBemassung, .roomPlan, .raumscans, .verbindungen]
         var ergebnis: [ModulGruppe] = []
         for modul in reihenfolge {
             if let letzte = ergebnis.last, letzte.sektion == modul.sektion {
@@ -164,6 +170,16 @@ struct AppShell: View {
         switch modul {
         case .heute:
             HeuteView(stores: stores)
+        case .fang:
+            ScrollView {
+                FangCard(postbox: stores.postboxStore, store: stores.projectStore, feldFotoStore: stores.feldFotoStore)
+                    .padding(20)
+            }
+            .background(MykColor.paper)
+            .navigationTitle("Fang")
+            .navigationBarTitleDisplayMode(.inline)
+        case .feldFotos:
+            FeldFotoListView(feldFotoStore: stores.feldFotoStore)
         case .projekte:
             ProjectListView(stores: stores)
         case .grundriss:

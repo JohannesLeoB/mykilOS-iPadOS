@@ -9,4 +9,6 @@ final class AppStores {
     let aufmassStore = AufmassStore()
     let roomPlanStore = RoomPlanStore()
     let grundrissStore = GrundrissEditorStore()
+    let postboxStore = PostboxStore()
+    let feldFotoStore = FeldFotoStore()
 }

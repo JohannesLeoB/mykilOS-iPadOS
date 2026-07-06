@@ -28,6 +28,8 @@
 	<string>mykilOS nutzt die Kamera, um Fotos für das Aufmaß aufzunehmen und zu bemaßen.</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>mykilOS sucht im lokalen Netzwerk nach unterstützten Messgeräten.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>mykilOS merkt sich den Standort eines Feld-Fotos als Teil der Beweiskette — nur beim Aufnehmen, kein Tracking.</string>
 	<key>NSMotionUsageDescription</key>
 	<string>mykilOS nutzt die Bewegungssensoren für die Kamera-Wasserwaage beim Aufmaß.</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
