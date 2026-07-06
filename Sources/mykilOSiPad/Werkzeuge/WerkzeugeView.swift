@@ -6,6 +6,7 @@ import SwiftUI
 /// Baustein für Baustein mit; gelistet wird nur, was schon portiert ist.
 struct WerkzeugeView: View {
     @State private var barcodeLog = BarcodeLogStore()
+    @State private var wareneingangLog = WareneingangsLogStore()
 
     var body: some View {
         List {
@@ -38,6 +39,18 @@ struct WerkzeugeView: View {
                 titel: "Raumakustik-Check",
                 unter: "Grobe Lautstärke, keine Nachhallzeit",
                 symbol: "waveform"
+            )
+            werkzeug(
+                ziel: { ARMassbandScreen() },
+                titel: "AR-Maßband",
+                unter: "Zwei Punkte antippen, Distanz sehen",
+                symbol: "arkit"
+            )
+            werkzeug(
+                ziel: { WareneingangsLogListView(wareneingangStore: wareneingangLog) },
+                titel: "Wareneingang",
+                unter: "Rohdaten-Log, kein Bestell-Abgleich",
+                symbol: "shippingbox"
             )
         }
         .listStyle(.insetGrouped)
