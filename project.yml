@@ -1,0 +1,70 @@
+name: mykilOSiPad
+options:
+  bundleIdPrefix: com.johannes
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    TARGETED_DEVICE_FAMILY: "2"
+    ENABLE_PREVIEWS: YES
+    DEVELOPMENT_TEAM: ""
+
+targets:
+  mykilOSiPad:
+    type: application
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: Sources/mykilOSiPad
+    resources:
+      - path: Resources
+    info:
+      path: Sources/mykilOSiPad/Info.plist
+      properties:
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UIRequiresFullScreen: false
+        NSBluetoothAlwaysUsageDescription: "mykilOS verbindet sich mit deinem Bluetooth-Laser-Entfernungsmesser, um Maße direkt beim Aufmaß zu übernehmen."
+        NSCameraUsageDescription: "mykilOS nutzt die Kamera, um Fotos für das Aufmaß aufzunehmen und zu bemaßen."
+        NSPhotoLibraryAddUsageDescription: "mykilOS speichert Aufmaß-Fotos und PDF-Exporte in deiner Fotomediathek, wenn du das auswählst."
+        NSLocalNetworkUsageDescription: "mykilOS sucht im lokalen Netzwerk nach unterstützten Messgeräten."
+        NSMotionUsageDescription: "mykilOS nutzt die Bewegungssensoren für die Kamera-Wasserwaage beim Aufmaß."
+        UIFileSharingEnabled: true
+        LSSupportsOpeningDocumentsInPlace: true
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.johannes.mykilOSiPad
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        SUPPORTS_MACCATALYST: false
+        SUPPORTED_PLATFORMS: iphoneos iphonesimulator
+    capabilities:
+      - com.apple.developer.corebluetooth: {}
+  mykilOSiPadTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources:
+      - path: Tests/mykilOSiPadTests
+    dependencies:
+      - target: mykilOSiPad
+
+schemes:
+  mykilOSiPad:
+    build:
+      targets:
+        mykilOSiPad: all
+        mykilOSiPadTests: [test]
+    test:
+      targets:
+        - mykilOSiPadTests
+    run:
+      config: Debug

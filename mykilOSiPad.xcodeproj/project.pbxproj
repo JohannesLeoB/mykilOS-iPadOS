@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		16575CE82C33942E1B597F17 /* mykilOSiPadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B82B82E577870803322857 /* mykilOSiPadApp.swift */; };
+		1852C9914558A8456A1B1D35 /* BLEGeraet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2182DEDC79FC0C41D25D4 /* BLEGeraet.swift */; };
+		1B95C2140F4F427D042A5B4D /* LeicaDistoProtokoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE250F940CBAC0A474B7D1D /* LeicaDistoProtokoll.swift */; };
+		3518517129B30326B8A7EE76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D46394548E2B1FCE3F9834 /* ContentView.swift */; };
+		85A4508C936B41399FC34450 /* LaserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0403A308ACCE419435F19048 /* LaserAdapter.swift */; };
+		C8D251A13255FD72701316FC /* BluetoothLaserScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F7F212FA78D4D717A0438 /* BluetoothLaserScanner.swift */; };
+		CAAD85196F598316C42EF714 /* MykColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D1BC2282B4BA125D9BA57 /* MykColor.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7C5811EF1539BD180BFD9008 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E93D4F163E21F526E0F51064 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DED92A95FAC8B6EB46C4CFBD;
+			remoteInfo = mykilOSiPad;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0403A308ACCE419435F19048 /* LaserAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaserAdapter.swift; sourceTree = "<group>"; };
+		0B1F7F212FA78D4D717A0438 /* BluetoothLaserScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothLaserScanner.swift; sourceTree = "<group>"; };
+		60B82B82E577870803322857 /* mykilOSiPadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mykilOSiPadApp.swift; sourceTree = "<group>"; };
+		644D1BC2282B4BA125D9BA57 /* MykColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MykColor.swift; sourceTree = "<group>"; };
+		9DC2182DEDC79FC0C41D25D4 /* BLEGeraet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEGeraet.swift; sourceTree = "<group>"; };
+		ABE250F940CBAC0A474B7D1D /* LeicaDistoProtokoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeicaDistoProtokoll.swift; sourceTree = "<group>"; };
+		AFA905A6C086C7D5D7492E3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B03AA4D4C721EA023A5FA139 /* mykilOSiPadTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = mykilOSiPadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1D46394548E2B1FCE3F9834 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FBDECE41104BD8814079CC8B /* mykilOSiPad.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = mykilOSiPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		0045AEF6A4AC2F39A4D17D05 /* mykilOSiPadTests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = mykilOSiPadTests;
+			sourceTree = "<group>";
+		};
+		2DB54EC81D49CA6EFF051D8F /* mykilOSiPad */ = {
+			isa = PBXGroup;
+			children = (
+				AFA905A6C086C7D5D7492E3F /* Info.plist */,
+				609F506E1E03A44025396BD3 /* App */,
+				84F95BDDD443C584B9D84FB1 /* Aufmass */,
+				6C677C184E06CED513560E6D /* Bluetooth */,
+				A2A3D9E896E130624768B0B3 /* DesignSystem */,
+			);
+			path = mykilOSiPad;
+			sourceTree = "<group>";
+		};
+		2F15732B231839681ADB54A3 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				2DB54EC81D49CA6EFF051D8F /* mykilOSiPad */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		56D6D893EFBDA390B07B3FFE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBDECE41104BD8814079CC8B /* mykilOSiPad.app */,
+				B03AA4D4C721EA023A5FA139 /* mykilOSiPadTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F1838F1211F60E1C53D1F8A = {
+			isa = PBXGroup;
+			children = (
+				2F15732B231839681ADB54A3 /* Sources */,
+				E9236D50C8BA07A84391A81B /* Tests */,
+				56D6D893EFBDA390B07B3FFE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		609F506E1E03A44025396BD3 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				F1D46394548E2B1FCE3F9834 /* ContentView.swift */,
+				60B82B82E577870803322857 /* mykilOSiPadApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		6C677C184E06CED513560E6D /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				9DC2182DEDC79FC0C41D25D4 /* BLEGeraet.swift */,
+				0B1F7F212FA78D4D717A0438 /* BluetoothLaserScanner.swift */,
+				0403A308ACCE419435F19048 /* LaserAdapter.swift */,
+				ABE250F940CBAC0A474B7D1D /* LeicaDistoProtokoll.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		7CAB462F01CF12BB31431038 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		84F95BDDD443C584B9D84FB1 /* Aufmass */ = {
+			isa = PBXGroup;
+			children = (
+				7CAB462F01CF12BB31431038 /* Models */,
+			);
+			path = Aufmass;
+			sourceTree = "<group>";
+		};
+		A2A3D9E896E130624768B0B3 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				644D1BC2282B4BA125D9BA57 /* MykColor.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		E9236D50C8BA07A84391A81B /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				0045AEF6A4AC2F39A4D17D05 /* mykilOSiPadTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		66C05FAF5AE50E932C1D76D4 /* mykilOSiPadTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4FAC63E123D659A766DE63A4 /* Build configuration list for PBXNativeTarget "mykilOSiPadTests" */;
+			buildPhases = (
+				31B95990AB6E75DDFB62BC5F /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				42A40FCE0CF44C3F774AE4E7 /* PBXTargetDependency */,
+			);
+			name = mykilOSiPadTests;
+			packageProductDependencies = (
+			);
+			productName = mykilOSiPadTests;
+			productReference = B03AA4D4C721EA023A5FA139 /* mykilOSiPadTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DED92A95FAC8B6EB46C4CFBD /* mykilOSiPad */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EC06AD7AA49D3C78B9765BD2 /* Build configuration list for PBXNativeTarget "mykilOSiPad" */;
+			buildPhases = (
+				C4E35C02996DC705953BE0DA /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = mykilOSiPad;
+			packageProductDependencies = (
+			);
+			productName = mykilOSiPad;
+			productReference = FBDECE41104BD8814079CC8B /* mykilOSiPad.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E93D4F163E21F526E0F51064 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					66C05FAF5AE50E932C1D76D4 = {
+						DevelopmentTeam = "";
+					};
+					DED92A95FAC8B6EB46C4CFBD = {
+						DevelopmentTeam = "";
+					};
+				};
+			};
+			buildConfigurationList = AA9F1467BE284C47A8788127 /* Build configuration list for PBXProject "mykilOSiPad" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 5F1838F1211F60E1C53D1F8A;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 56D6D893EFBDA390B07B3FFE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DED92A95FAC8B6EB46C4CFBD /* mykilOSiPad */,
+				66C05FAF5AE50E932C1D76D4 /* mykilOSiPadTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31B95990AB6E75DDFB62BC5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4E35C02996DC705953BE0DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1852C9914558A8456A1B1D35 /* BLEGeraet.swift in Sources */,
+				C8D251A13255FD72701316FC /* BluetoothLaserScanner.swift in Sources */,
+				3518517129B30326B8A7EE76 /* ContentView.swift in Sources */,
+				85A4508C936B41399FC34450 /* LaserAdapter.swift in Sources */,
+				1B95C2140F4F427D042A5B4D /* LeicaDistoProtokoll.swift in Sources */,
+				CAAD85196F598316C42EF714 /* MykColor.swift in Sources */,
+				16575CE82C33942E1B597F17 /* mykilOSiPadApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		42A40FCE0CF44C3F774AE4E7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DED92A95FAC8B6EB46C4CFBD /* mykilOSiPad */;
+			targetProxy = 7C5811EF1539BD180BFD9008 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		164F1AA3527EC0FDA0E5A7BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Sources/mykilOSiPad/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.johannes.mykilOSiPad;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7086524FE5C87C4A7BBD6801 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		7387C63E3A4ECCF7DE5D0667 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.johannes.mykilOSiPadTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mykilOSiPad.app/mykilOSiPad";
+			};
+			name = Debug;
+		};
+		7F207AB9D6963FCEE7609B06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				INFOPLIST_FILE = Sources/mykilOSiPad/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.johannes.mykilOSiPad;
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AFCCB2BD8D431C2416A97EA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.johannes.mykilOSiPadTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mykilOSiPad.app/mykilOSiPad";
+			};
+			name = Release;
+		};
+		C72EE73B12091C1E0B690E38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4FAC63E123D659A766DE63A4 /* Build configuration list for PBXNativeTarget "mykilOSiPadTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7387C63E3A4ECCF7DE5D0667 /* Debug */,
+				AFCCB2BD8D431C2416A97EA5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		AA9F1467BE284C47A8788127 /* Build configuration list for PBXProject "mykilOSiPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7086524FE5C87C4A7BBD6801 /* Debug */,
+				C72EE73B12091C1E0B690E38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		EC06AD7AA49D3C78B9765BD2 /* Build configuration list for PBXNativeTarget "mykilOSiPad" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7F207AB9D6963FCEE7609B06 /* Debug */,
+				164F1AA3527EC0FDA0E5A7BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E93D4F163E21F526E0F51064 /* Project object */;
+}
