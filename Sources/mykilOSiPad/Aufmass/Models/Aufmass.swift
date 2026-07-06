@@ -67,6 +67,17 @@ enum MassQuelle: String, Codable { case laser, manuell, pencil }
 enum MassFarbe: String, Codable, CaseIterable, Identifiable {
     case orange, blau, gruen, ocker, plum, rot
     var id: String { rawValue }
+
+    var titel: String {
+        switch self {
+        case .orange: return "Orange"
+        case .blau: return "Blau"
+        case .gruen: return "Grün"
+        case .ocker: return "Ocker"
+        case .plum: return "Pflaume"
+        case .rot: return "Rot"
+        }
+    }
 }
 
 /// Platzierbare Anschluss-/Ausstattungs-Symbole.

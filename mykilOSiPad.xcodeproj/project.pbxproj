@@ -8,12 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		16575CE82C33942E1B597F17 /* mykilOSiPadApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B82B82E577870803322857 /* mykilOSiPadApp.swift */; };
+		179987552CDED6791C35FC4F /* AufmassStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB7B785D48238075344E076 /* AufmassStore.swift */; };
 		1852C9914558A8456A1B1D35 /* BLEGeraet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DC2182DEDC79FC0C41D25D4 /* BLEGeraet.swift */; };
+		1A49A1AF807832E106B5C043 /* RoomPlanListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510EB2FED31BBDF9C302E04B /* RoomPlanListView.swift */; };
 		1B95C2140F4F427D042A5B4D /* LeicaDistoProtokoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE250F940CBAC0A474B7D1D /* LeicaDistoProtokoll.swift */; };
 		3518517129B30326B8A7EE76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D46394548E2B1FCE3F9834 /* ContentView.swift */; };
+		552CC59EB65955C34EACBC23 /* RaumGeometrie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A3E8CBF84BD14509469F5 /* RaumGeometrie.swift */; };
+		6186AE81C10ECC2A8F616F09 /* Fehlertext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E11BBE9332AE03C0BFFF310 /* Fehlertext.swift */; };
+		7E9D26B4C5508D8D95F475E5 /* AufmassPDFRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53616E404936F6F13C16DB63 /* AufmassPDFRenderer.swift */; };
 		85A4508C936B41399FC34450 /* LaserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0403A308ACCE419435F19048 /* LaserAdapter.swift */; };
+		89AC33D5D73D527548C14CE9 /* KameraLevelSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0806D091E3E66DE241858 /* KameraLevelSensor.swift */; };
+		8B14812ABBE4F8EB3D4BC2E4 /* GrundrissPDFRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634B391CF6A663992AA4517 /* GrundrissPDFRenderer.swift */; };
+		A649D7F5D77259A08428E5CF /* RoomPlanCaptureBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7A627871874CEE360CD359 /* RoomPlanCaptureBridge.swift */; };
+		B9DE7349B0FCB3EC04DA9E64 /* RoomPlanCaptureScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A56923A139F4DDE5544DE /* RoomPlanCaptureScreen.swift */; };
+		BDA5DEF6ED17E838366B8A3B /* RoomPlanAufnahme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916EA9A5B5042E7D380D32E4 /* RoomPlanAufnahme.swift */; };
+		C06D96F1F30963C8C27E979F /* Aufmass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96E189CC73CFA73699000D /* Aufmass.swift */; };
 		C8D251A13255FD72701316FC /* BluetoothLaserScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F7F212FA78D4D717A0438 /* BluetoothLaserScanner.swift */; };
 		CAAD85196F598316C42EF714 /* MykColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D1BC2282B4BA125D9BA57 /* MykColor.swift */; };
+		E5B606710BB08538346A8D23 /* RoomPlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AEE13491BC4AD16E753EA7 /* RoomPlanStore.swift */; };
+		E5E4F0AA06A8AA3FEEC49654 /* TeilenAnsicht.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FBBEFE744E3BD2A89BBD0 /* TeilenAnsicht.swift */; };
+		E8A3B623323B450119F8BFDE /* RaumGeometrieExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E32453A742C42B3404EA97 /* RaumGeometrieExtractor.swift */; };
+		E95F423D443937B28D31EA1E /* GrundrissDXFExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B971F5BFB851DF6F606BF /* GrundrissDXFExporter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +44,28 @@
 /* Begin PBXFileReference section */
 		0403A308ACCE419435F19048 /* LaserAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaserAdapter.swift; sourceTree = "<group>"; };
 		0B1F7F212FA78D4D717A0438 /* BluetoothLaserScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothLaserScanner.swift; sourceTree = "<group>"; };
+		1634B391CF6A663992AA4517 /* GrundrissPDFRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissPDFRenderer.swift; sourceTree = "<group>"; };
+		282A3E8CBF84BD14509469F5 /* RaumGeometrie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaumGeometrie.swift; sourceTree = "<group>"; };
+		2FB7B785D48238075344E076 /* AufmassStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AufmassStore.swift; sourceTree = "<group>"; };
+		510EB2FED31BBDF9C302E04B /* RoomPlanListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomPlanListView.swift; sourceTree = "<group>"; };
+		53616E404936F6F13C16DB63 /* AufmassPDFRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AufmassPDFRenderer.swift; sourceTree = "<group>"; };
 		60B82B82E577870803322857 /* mykilOSiPadApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mykilOSiPadApp.swift; sourceTree = "<group>"; };
 		644D1BC2282B4BA125D9BA57 /* MykColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MykColor.swift; sourceTree = "<group>"; };
+		6E7A627871874CEE360CD359 /* RoomPlanCaptureBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomPlanCaptureBridge.swift; sourceTree = "<group>"; };
+		7EB0806D091E3E66DE241858 /* KameraLevelSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KameraLevelSensor.swift; sourceTree = "<group>"; };
+		8E11BBE9332AE03C0BFFF310 /* Fehlertext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fehlertext.swift; sourceTree = "<group>"; };
+		916EA9A5B5042E7D380D32E4 /* RoomPlanAufnahme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomPlanAufnahme.swift; sourceTree = "<group>"; };
+		95E32453A742C42B3404EA97 /* RaumGeometrieExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaumGeometrieExtractor.swift; sourceTree = "<group>"; };
 		9DC2182DEDC79FC0C41D25D4 /* BLEGeraet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEGeraet.swift; sourceTree = "<group>"; };
 		ABE250F940CBAC0A474B7D1D /* LeicaDistoProtokoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeicaDistoProtokoll.swift; sourceTree = "<group>"; };
+		AC8FBBEFE744E3BD2A89BBD0 /* TeilenAnsicht.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeilenAnsicht.swift; sourceTree = "<group>"; };
 		AFA905A6C086C7D5D7492E3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B03AA4D4C721EA023A5FA139 /* mykilOSiPadTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = mykilOSiPadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B19A56923A139F4DDE5544DE /* RoomPlanCaptureScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomPlanCaptureScreen.swift; sourceTree = "<group>"; };
+		B5AEE13491BC4AD16E753EA7 /* RoomPlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomPlanStore.swift; sourceTree = "<group>"; };
+		CB1B971F5BFB851DF6F606BF /* GrundrissDXFExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissDXFExporter.swift; sourceTree = "<group>"; };
 		F1D46394548E2B1FCE3F9834 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FB96E189CC73CFA73699000D /* Aufmass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aufmass.swift; sourceTree = "<group>"; };
 		FBDECE41104BD8814079CC8B /* mykilOSiPad.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = mykilOSiPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -47,6 +77,16 @@
 			path = mykilOSiPadTests;
 			sourceTree = "<group>";
 		};
+		2AA3968E3139C53900A2AB92 /* Export */ = {
+			isa = PBXGroup;
+			children = (
+				53616E404936F6F13C16DB63 /* AufmassPDFRenderer.swift */,
+				CB1B971F5BFB851DF6F606BF /* GrundrissDXFExporter.swift */,
+				1634B391CF6A663992AA4517 /* GrundrissPDFRenderer.swift */,
+			);
+			path = Export;
+			sourceTree = "<group>";
+		};
 		2DB54EC81D49CA6EFF051D8F /* mykilOSiPad */ = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +95,10 @@
 				84F95BDDD443C584B9D84FB1 /* Aufmass */,
 				6C677C184E06CED513560E6D /* Bluetooth */,
 				A2A3D9E896E130624768B0B3 /* DesignSystem */,
+				2AA3968E3139C53900A2AB92 /* Export */,
+				87B63C1DCF47139C213B4964 /* Kamera */,
+				796BEDBD067255F3759476D5 /* RoomPlan */,
+				90EBD8EFF0F364BFA29F676E /* Shared */,
 			);
 			path = mykilOSiPad;
 			sourceTree = "<group>";
@@ -105,9 +149,25 @@
 			path = Bluetooth;
 			sourceTree = "<group>";
 		};
+		796BEDBD067255F3759476D5 /* RoomPlan */ = {
+			isa = PBXGroup;
+			children = (
+				282A3E8CBF84BD14509469F5 /* RaumGeometrie.swift */,
+				95E32453A742C42B3404EA97 /* RaumGeometrieExtractor.swift */,
+				916EA9A5B5042E7D380D32E4 /* RoomPlanAufnahme.swift */,
+				6E7A627871874CEE360CD359 /* RoomPlanCaptureBridge.swift */,
+				B19A56923A139F4DDE5544DE /* RoomPlanCaptureScreen.swift */,
+				510EB2FED31BBDF9C302E04B /* RoomPlanListView.swift */,
+				B5AEE13491BC4AD16E753EA7 /* RoomPlanStore.swift */,
+			);
+			path = RoomPlan;
+			sourceTree = "<group>";
+		};
 		7CAB462F01CF12BB31431038 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FB96E189CC73CFA73699000D /* Aufmass.swift */,
+				2FB7B785D48238075344E076 /* AufmassStore.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -118,6 +178,23 @@
 				7CAB462F01CF12BB31431038 /* Models */,
 			);
 			path = Aufmass;
+			sourceTree = "<group>";
+		};
+		87B63C1DCF47139C213B4964 /* Kamera */ = {
+			isa = PBXGroup;
+			children = (
+				7EB0806D091E3E66DE241858 /* KameraLevelSensor.swift */,
+			);
+			path = Kamera;
+			sourceTree = "<group>";
+		};
+		90EBD8EFF0F364BFA29F676E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				8E11BBE9332AE03C0BFFF310 /* Fehlertext.swift */,
+				AC8FBBEFE744E3BD2A89BBD0 /* TeilenAnsicht.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		A2A3D9E896E130624768B0B3 /* DesignSystem */ = {
@@ -223,12 +300,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C06D96F1F30963C8C27E979F /* Aufmass.swift in Sources */,
+				7E9D26B4C5508D8D95F475E5 /* AufmassPDFRenderer.swift in Sources */,
+				179987552CDED6791C35FC4F /* AufmassStore.swift in Sources */,
 				1852C9914558A8456A1B1D35 /* BLEGeraet.swift in Sources */,
 				C8D251A13255FD72701316FC /* BluetoothLaserScanner.swift in Sources */,
 				3518517129B30326B8A7EE76 /* ContentView.swift in Sources */,
+				6186AE81C10ECC2A8F616F09 /* Fehlertext.swift in Sources */,
+				E95F423D443937B28D31EA1E /* GrundrissDXFExporter.swift in Sources */,
+				8B14812ABBE4F8EB3D4BC2E4 /* GrundrissPDFRenderer.swift in Sources */,
+				89AC33D5D73D527548C14CE9 /* KameraLevelSensor.swift in Sources */,
 				85A4508C936B41399FC34450 /* LaserAdapter.swift in Sources */,
 				1B95C2140F4F427D042A5B4D /* LeicaDistoProtokoll.swift in Sources */,
 				CAAD85196F598316C42EF714 /* MykColor.swift in Sources */,
+				552CC59EB65955C34EACBC23 /* RaumGeometrie.swift in Sources */,
+				E8A3B623323B450119F8BFDE /* RaumGeometrieExtractor.swift in Sources */,
+				BDA5DEF6ED17E838366B8A3B /* RoomPlanAufnahme.swift in Sources */,
+				A649D7F5D77259A08428E5CF /* RoomPlanCaptureBridge.swift in Sources */,
+				B9DE7349B0FCB3EC04DA9E64 /* RoomPlanCaptureScreen.swift in Sources */,
+				1A49A1AF807832E106B5C043 /* RoomPlanListView.swift in Sources */,
+				E5B606710BB08538346A8D23 /* RoomPlanStore.swift in Sources */,
+				E5E4F0AA06A8AA3FEEC49654 /* TeilenAnsicht.swift in Sources */,
 				16575CE82C33942E1B597F17 /* mykilOSiPadApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
