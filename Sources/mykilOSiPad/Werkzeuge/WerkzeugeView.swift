@@ -13,6 +13,24 @@ struct WerkzeugeView: View {
                 unter: "Gyroskop-Neigungsmesser",
                 symbol: "level"
             )
+            werkzeug(
+                ziel: { BeleuchtungsCheckView() },
+                titel: "Beleuchtungs-Check",
+                unter: "Foto → Helligkeit einschätzen",
+                symbol: "sun.max.fill"
+            )
+            werkzeug(
+                ziel: { FarbtemperaturCheckView() },
+                titel: "Farbtemperatur-Check",
+                unter: "Warm/Neutral/Kühl — grobe Schätzung, kein Kelvin",
+                symbol: "paintpalette.fill"
+            )
+            werkzeug(
+                ziel: { RaumakustikCheckView() },
+                titel: "Raumakustik-Check",
+                unter: "Grobe Lautstärke, keine Nachhallzeit",
+                symbol: "waveform"
+            )
         }
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
