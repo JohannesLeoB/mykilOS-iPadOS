@@ -1,8 +1,8 @@
 # Arbeitsstand — ehrlich, nicht schöngeredet
 
-**Stand: 2026-07-07, ~01:00 Uhr, Session-Ende (Rate-Limit-Handoff).**
+**Stand: 2026-07-07, ~01:50 Uhr (Nacht-Session, autonom).**
 
-## Kontext dieser Session
+## Kontext
 
 Johannes' Kritik am ersten Durchgang (wörtlich): "noch lange nicht auch nur einen
 Hauch so gut wie die iOS App... weder CI noch UX noch irgendwas beachtet, einfach
@@ -12,102 +12,95 @@ statt Freitext-Feldern, und ein systematischer Anlauf, **alle** ~113 Swift-Datei
 aus mykilOS iOS (`myMini`) zu portieren, nicht nur den Aufmaß-Ausschnitt.
 Siehe Memory `feedback_full-parity-real-ux` — UNBEDINGT vor Weiterarbeit lesen.
 
-## Was echt verifiziert ist (Build grün + Simulator-Screenshot)
+In der Nacht-Session vom 07.07. wurden die verbliebenen portierbaren Tasks
+#16–#19 komplett abgearbeitet (siehe unten). Alles baut grün, 34 Unit-Tests grün,
+App startet im Simulator (Screenshot verifiziert).
+
+## Was echt verifiziert ist (Build grün + Simulator-Launch)
 
 - Xcode-Projekt (xcodegen, iPadOS 17+, Swift 6 strict concurrency)
-- Echte mykilOS-CI: ABC-Monument-Grotesk-Schrift, Farbtokens, offizielles
-  App-Icon (M-Wortzeichen)
-- **AppShell**: NavigationSplitView, schwarze Sidebar, nummerierte Sektionen
-  (01 Heute, 02 Fang, 03 Projekte, 04 Aufmaß, 05 Verbindungen), Breadcrumb
-  "MYKILOS / MODUL"
-- **Projekt-Registry**: echte 31 Kundenprojekte aus `projekte.json`,
-  ProjectListView/ProjectDetailView, Aufmaß/RoomPlan/Grundriss sind jetzt an
-  echte Projektwahl gekoppelt (nicht mehr Freitext)
-- **Grundriss-Editor**: manuelles 2D-Wände-Zeichnen (Raster/Magnet-Fang,
-  Bauelemente, Formen, Text, Rückgängig, PDF/DXF-Export)
-- **Foto-Bemaßung**: Zoom/Pan/Lupe, Maß/Notiz/Symbol/Winkel + neues
-  Apple-Pencil-Freihand-Werkzeug (PencilKit)
-- **RoomPlan/LiDAR-Aufmaß**: Scan, PDF/DXF-Grundrissexport
-- **Bluetooth-Laser-Registry**: 12 Hersteller, nur Leica DISTO echt
-  verifiziert (siehe `Sources/mykilOSiPad/Bluetooth/LaserAdapter.swift`)
-- **Fang-Workflow (NEU diese Session)**: PostboxStore/-View, FeldFotoStore/
-  -ListView/-BestaetigungView, FangCard (Text-Fang + Feld-Foto-Kamera),
-  EinmaligerOrtsSensor — ohne Sprachaufnahme/OCR (siehe unten)
-- 18 Unit-Tests grün (reine Logik: Geometrie, Aufmaß-Modell, Leica-Protokoll)
+- Echte mykilOS-CI: ABC-Monument-Grotesk-Schrift, Farbtokens, App-Icon (M-Wortzeichen)
+- **AppShell**: NavigationSplitView, schwarze Sidebar, jetzt sechs nummerierte
+  Sektionen (01 Heute, 02 Fang, 03 Projekte, 04 Aufmaß, **05 Werkzeuge**,
+  06 Verbindungen), Breadcrumb "MYKILOS / MODUL". Simulator-Launch bestätigt.
+- **Projekt-Registry**: 31 echte Kundenprojekte aus `projekte.json`
+- **Aufmaß-Kette**: Grundriss-Editor, Foto-Bemaßung (+ Pencil), RoomPlan/LiDAR,
+  Bluetooth-Laser-Registry (nur Leica DISTO echt verifiziert)
+- **Fang-Workflow**: Postbox, FeldFoto, FangCard, EinmaligerOrtsSensor
 
-**Letzter git-Commit**: `e36f5a4` "Postbox + FeldFoto-Fang-Workflow portiert
-(Task #15)", gepusht auf `main` @ github.com/JohannesLeoB/mykilOS-iPadOS.
-Build war zu diesem Stand grün (vor dem Commit verifiziert).
+### NEU in dieser Nacht-Session — Tasks #16–#19 (alle grün)
+
+- **Task #16 — Werkzeuge-Sammlung** (`Sources/.../Werkzeuge/`): Wasserwaage
+  (CoreMotion), Beleuchtungs-/Farbtemperatur-Check (CoreImage), Raumakustik-Check
+  (AVAudioRecorder), Barcode/QR-Scanner (VisionKit + neustart-fester Log),
+  AR-Maßband (ARKit/SceneKit), Wareneingangs-Log.
+- **Task #17 — Abnahmeprotokoll + Vertragssignatur** (`Abnahme/`, `Vertrag/`,
+  `Sprache/`): on-device Diktat (Speech), Mangel-Protokoll + A4-PDF-Export;
+  PencilKit-Unterschrift + SHA-256-versiegeltes PDF + nicht-löschbares Register.
+- **Task #18 — Service-Anfrage + Kontakte** (`Service/`, `Kontakte/`): geführte
+  Service-Mail (MFMailCompose, Fotos als Anhang), Partner-/Anfrage-Log;
+  Kontakte-Verzeichnis (anrufen/mailen/Route). Airtable-Sync bewusst NICHT
+  portiert → `KontakteStore` ehrlich cache-only (siehe unten).
+- **Task #19 — OCR-Fang + AR-Anker** (`Fang/`, `ARAnker/`): Vision-OCR für
+  Lieferschein (→ Wareneingang) und Visitenkarte (→ Contacts), beide mit
+  Karte→Bestätigung; AR-Gewerke-Marker (Wasser/Strom/Abfluss) → FeldFoto.
+- **Info.plist**: NSMicrophone-, NSSpeechRecognition-, NSContactsUsageDescription
+  ergänzt (Mikrofon-Key fehlte auch dem Raumakustik-Check → retroaktiv gefixt).
+- **Laser-Recherche**: `docs/LASER_PROTOKOLL_RECHERCHE.md` jetzt vorhanden
+  (Leica + Bosch real dokumentiert, Rest ehrlich als undokumentiert markiert).
+- **Tests**: 18 → **34** grün (neu: ARMassbandMesser, vier Store-Persistenz-
+  Round-Trips, GewerkeTyp).
+
+**Letzte git-Commits** (lokal auf `main`, NOCH NICHT gepusht — siehe unten):
+`9ec111f` Tests, `e3d556c` Task #19, `e3cc7d8` #18, `bd07c57` #17, `63028a0` #16 …
+
+## ⚠️ Push nach `origin main` steht noch aus
+
+Der direkte Push auf `main` wurde in der autonomen Session vom Auto-Mode-
+Classifier blockiert (Schutz gegen Direkt-Push auf den Default-Branch ohne
+PR-Review). Alle Arbeit liegt als saubere lokale Commits vor. **Johannes muss
+`git push origin main` selbst auslösen** (oder einen Branch + PR anlegen). Der
+Pre-Push-Hook (`scripts/guard-pre-push.sh`) schützt weiterhin das Ziel-Repo.
 
 ## Was NUR compiliert, nicht am Gerät getestet (Simulator kann's nicht)
 
-Bluetooth-Kopplung, Kamera, RoomPlan/LiDAR, Apple Pencil (Druck/Neigung/
-Palm-Rejection), Multi-Touch-Gesten am echten Display, GPS/CoreLocation.
+Bluetooth-Kopplung, Kamera, RoomPlan/LiDAR, ARKit (AR-Maßband, AR-Anker —
+Ebenen-Erkennung geräteabhängig), Apple Pencil (Druck/Neigung), Mikrofon/
+Speech-Diktat, Contacts-Schreiben, GPS/CoreLocation.
 
-## Was noch komplett fehlt — die verbleibenden ~90 der 113 mykilOS-iOS-Dateien
+## Was jetzt noch fehlt — nur noch credential-gated Module
 
-Siehe TaskList (Tool `TaskList` bzw. die Aufgaben #16-19 unten), in
-Prioritätsreihenfolge:
+Die portierbare Basis ist komplett. Was übrig ist, braucht externe Zugänge, die
+Johannes erst einrichten muss (bewusst zurückgestellt, siehe Memory):
 
-1. **Werkzeuge-Sammlung** (Task #16): WasserwaageView/-Sensor (Gyroskop-
-   Wasserwaage), Beleuchtungs-/Farbtemperatur-/Raumakustik-Check (schnelle
-   Sensor-Checks, alle on-device, keine externen Abhängigkeiten),
-   ARMassbandMesser/-Bridge/-Screen (einfaches AR-Maßband via ARKit),
-   BarcodeScannerBridge/-Screen/-LogView (VisionKit Live-Barcode),
-   WareneingangsLogStore/-ListView. Alle Dateien liegen in
-   `/Users/johannesleoberger/Claude/Projects/myMini/mykilos-mobile/myMini/mykilOS-mobile-KOMPLETT/`
-   (READ-ONLY, fremdes Repo — siehe KOORDINATEN.md) und sind meist
-   selbstständig portierbar (keine Cloud-Credentials nötig).
-2. **Abnahmeprotokoll + Vertragssignatur** (Task #17): AbnahmeprotokollView/
-   -Store/-PDFRenderer (Diktat-Mängelaufnahme — braucht
-   SpracheZuTextService, on-device Speech-Framework, kein Cloud-Call),
-   VertragSignierenView/VertragsSignatur (PencilKit-Unterschrift — direkt an
-   unser bestehendes `PKCanvasRepresentable`-Muster anschließbar).
-3. **Service-Anfrage + Kontakte** (Task #18): ServiceAnfrageView/-Kern,
-   KontakteVerzeichnisView/-Store/KundenKontakt, KontaktSchreiber — die
-   Kontakte-Anbindung braucht Airtable-Credentials (noch nicht portiert),
-   kann aber mit leerer/lokaler Liste starten.
-4. **OCR-Fang-Flows + AR-Anker** (Task #19): LieferscheinOCR/
-   -BestaetigungView, VisitenkartenOCR/-BestaetigungView (beide Vision-
-   Framework, on-device), ARAnkerScreen/-Bridge/GewerkeTyp.
+- **Airtable-Sync**: `AirtableKundenClient` (Kontakte-Verzeichnis wird dann echt
+  befüllt — Einhängepunkt ist `KontakteStore.aktualisieren()`, View bleibt gleich),
+  `AirtableClockodoPostboxClient`, `AirtablePostboxSettingsView`.
+- **Google-Drive-Upload**: `GoogleDriveUploadClient`, `GoogleOAuthPKCEService`,
+  `GoogleSignInSettingsView`, `GoogleCredentialsStore`.
+- **Claude-Assistent-Chat**: `ClaudeMessagesClient`, `AssistantChatView`,
+  `ClaudeSettingsView`.
+- **Geofencing/Standort-Wächter**: `GeofenceWaechter`, `StandortAufenthalt`-System
+  (bewusst niedrige Priorität — iPad wird seltener am Körper getragen).
 
-**Bewusst zurückgestellt** (brauchen externe Credentials/OAuth, die
-Johannes erst einrichten müsste): Google-Drive-Upload (GoogleDriveUploadClient,
-GoogleOAuthPKCEService, GoogleSignInSettingsView, GoogleCredentialsStore),
-Airtable-Postbox-Sync (AirtableClockodoPostboxClient, AirtablePostboxSettingsView,
-AirtableKundenClient), Claude-Assistent-Chat (ClaudeMessagesClient,
-AssistantChatView, ClaudeSettingsView), Geofencing/Standort-Wächter
-(GeofenceWaechter, StandortAufenthalt-System — bewusst niedrige Priorität,
-iPad wird seltener am Körper getragen als iPhone).
+## Offene Politur-Ideen (nicht blockiert, optional)
 
-**Laser-Hersteller-Recherche**: Ein Hintergrund-Agent sollte
-`docs/LASER_PROTOKOLL_RECHERCHE.md` befüllen (echte BLE-GATT-Protokolle für
-Bosch/Einhell/Laserliner/etc. statt nur Namens-Heuristik) — bei Session-Ende
-war die Datei noch NICHT entstanden. Zwei Versuche liefen, keiner hat
-sichtbar ein Ergebnis geschrieben. In der nächsten Session prüfen und ggf.
-neu anstoßen (Prompt-Vorlage siehe unten im Handoff).
+- OCR-Fang (Lieferschein/Visitenkarte) sitzt aktuell im Werkzeugkasten; die
+  iOS-Vorlage startet ihn aus der **Fang-Karte** — könnte dorthin verschoben/
+  ergänzt werden.
+- `MFMailComposeViewControllerDelegate`-Konformanz erzeugt unter strict
+  concurrency einen Compiler-`note` (kein Fehler, Build grün) — könnte mit
+  `@preconcurrency` sauberer markiert werden.
 
-## Wichtige Lektionen aus dieser Session
+## Wichtige Lektionen (weiterhin gültig)
 
-- **xcodegen 2.45.4-Eigenheit**: `resources:` als Top-Level-Key wird für das
-  App-Target komplett ignoriert (kein Fehler, einfach leer). Fix: Ressourcen
-  über `sources:` mit `buildPhase: resources` einbinden (siehe `project.yml`).
-- **GraphicsContext.draw() + Image**: `.font()`/`.foregroundColor()` auf
-  `Image` geben KEIN konkretes `Image` zurück (anders als bei `Text`) —
-  `context.draw(_:at:)` erwartet aber exakt `Image`. Lösung: entweder ohne
-  Modifier zeichnen oder `context.draw(_:in: CGRect)` mit vorbestimmter
-  Größe nutzen.
-- **CoreBluetooth/RoomPlan-Delegates + Swift 6 strict concurrency**: `class`
-  ist `@MainActor`, Delegate-Protokoll ist es nicht → Konformanz mit
-  `@preconcurrency` markieren (`@preconcurrency CBCentralManagerDelegate`
-  etc.), NICHT die iOS-Vorlage kopieren, die stattdessen `nonisolated` +
-  `Task { @MainActor in }`-Hopping nutzt (erzeugt Sendable-Warnings bei
-  `CBPeripheral`).
-- **Simulator-Flakiness**: `xcrun simctl install/boot` hängt gelegentlich
-  minutenlang oder schlägt mit obskuren Fehlern fehl. Fix: `killall -9
-  Simulator com.apple.CoreSimulator.CoreSimulatorService`, dann neu booten.
-- **Guard-Hook-Selbstschutz**: Das automatische Anlegen von
-  PreToolUse-Permission-Hooks (`.claude/guard-ipados.sh`, das eigene
-  Tool-Rechte einschränkt) wurde vom Auto-Mode-Classifier blockiert — zu
-  Recht, das ist Selbst-Modifikation der eigenen Befugnisse. Nur mit
-  explizitem Nutzer-Go anlegen.
+- **xcodegen 2.45.4**: Top-Level-`resources:` wird fürs App-Target ignoriert →
+  Ressourcen über `sources:` mit `buildPhase: resources` einbinden.
+- **SourceKit vs. xcodebuild**: Nach `xcodegen generate` zeigt der Editor kurz
+  massenhaft "Cannot find … in scope" / "unavailable in macOS" — reines
+  Reindex-/falsches-SDK-Rauschen. Grundwahrheit ist `xcodebuild` (baute grün).
+- **Swift Testing statt XCTest**: Tests nutzen `@Test`/`#expect`. `xcodebuild
+  test` meldet in der XCTest-Summenzeile "Executed 0 tests" — die echte Zahl
+  steht in der Swift-Testing-Zeile ("Test run with N tests … passed").
+- **Simulator-Flakiness**: `simctl` hängt gelegentlich → `killall -9 Simulator
+  com.apple.CoreSimulator.CoreSimulatorService`, neu booten.
