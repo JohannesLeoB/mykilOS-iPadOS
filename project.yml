@@ -21,8 +21,8 @@ targets:
     deploymentTarget: "17.0"
     sources:
       - path: Sources/mykilOSiPad
-    resources:
       - path: Resources
+        buildPhase: resources
     info:
       path: Sources/mykilOSiPad/Info.plist
       properties:
@@ -40,6 +40,9 @@ targets:
         NSMotionUsageDescription: "mykilOS nutzt die Bewegungssensoren für die Kamera-Wasserwaage beim Aufmaß."
         UIFileSharingEnabled: true
         LSSupportsOpeningDocumentsInPlace: true
+        UIAppFonts:
+          - ABCMonumentGrotesk-Medium.otf
+          - ABCMonumentGroteskMono-Regular.otf
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.johannes.mykilOSiPad

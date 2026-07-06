@@ -30,7 +30,7 @@ struct ContentView: View {
         } detail: {
             VStack(spacing: 24) {
                 Text("mykilOS")
-                    .font(.system(size: 34, weight: .medium, design: .default))
+                    .font(.mykGrotesk(34))
                     .foregroundStyle(MykColor.ink)
                 Text("iPad — Aufmaß-Modus im Aufbau")
                     .foregroundStyle(MykColor.muted)
