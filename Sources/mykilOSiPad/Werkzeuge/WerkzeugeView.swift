@@ -50,10 +50,28 @@ struct WerkzeugeView: View {
                 symbol: "arkit"
             )
             werkzeug(
+                ziel: { LieferscheinFangView(store: store, wareneingangStore: wareneingangLog) },
+                titel: "Lieferschein-Fang",
+                unter: "Foto → OCR → Wareneingang loggen",
+                symbol: "doc.text.viewfinder"
+            )
+            werkzeug(
                 ziel: { WareneingangsLogListView(wareneingangStore: wareneingangLog) },
                 titel: "Wareneingang",
                 unter: "Rohdaten-Log, kein Bestell-Abgleich",
                 symbol: "shippingbox"
+            )
+            werkzeug(
+                ziel: { VisitenkarteFangView() },
+                titel: "Visitenkarten-Fang",
+                unter: "Foto → OCR → Kontakt anlegen",
+                symbol: "person.crop.rectangle.badge.plus"
+            )
+            werkzeug(
+                ziel: { ARAnkerScreen(store: store, feldFotoStore: feldFotoStore) },
+                titel: "AR-Anker · Gewerke",
+                unter: "Wasser/Strom/Abfluss im Raum markieren",
+                symbol: "mappin.and.ellipse"
             )
             werkzeug(
                 ziel: { AbnahmeprotokollView(store: store) },

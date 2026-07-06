@@ -26,6 +26,8 @@
 	<string>mykilOS verbindet sich mit deinem Bluetooth-Laser-Entfernungsmesser, um Maße direkt beim Aufmaß zu übernehmen.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>mykilOS nutzt die Kamera, um Fotos für das Aufmaß aufzunehmen und zu bemaßen.</string>
+	<key>NSContactsUsageDescription</key>
+	<string>mykilOS legt aus einer abfotografierten Visitenkarte auf deinen Tipp hin einen neuen Kontakt an — nur nach ausdrücklicher Bestätigung, nie automatisch.</string>
 	<key>NSLocalNetworkUsageDescription</key>
 	<string>mykilOS sucht im lokalen Netzwerk nach unterstützten Messgeräten.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

@@ -41,6 +41,7 @@ targets:
         NSMotionUsageDescription: "mykilOS nutzt die Bewegungssensoren für die Kamera-Wasserwaage und die Wasserwaage im Werkzeugkasten."
         NSMicrophoneUsageDescription: "mykilOS nutzt das Mikrofon für die Diktat-Mängelaufnahme im Abnahmeprotokoll und den Raumakustik-Check — Audio verlässt das Gerät nicht."
         NSSpeechRecognitionUsageDescription: "mykilOS wandelt dein Diktat on-device in Text um (Abnahmeprotokoll) — kein Cloud-Dienst, kein Audio-Upload."
+        NSContactsUsageDescription: "mykilOS legt aus einer abfotografierten Visitenkarte auf deinen Tipp hin einen neuen Kontakt an — nur nach ausdrücklicher Bestätigung, nie automatisch."
         NSLocationWhenInUseUsageDescription: "mykilOS merkt sich den Standort eines Feld-Fotos als Teil der Beweiskette — nur beim Aufnehmen, kein Tracking."
         UIFileSharingEnabled: true
         LSSupportsOpeningDocumentsInPlace: true
