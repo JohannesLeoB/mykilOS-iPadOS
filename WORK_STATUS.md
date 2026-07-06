@@ -16,6 +16,10 @@ komplett aus, weil der Simulator das nicht kann.
   mykilOS-CI-Farben und die echte ABC-Monument-Grotesk-Schrift wurden per
   Screenshot bestätigt (Font-Datei im App-Bundle nachgewiesen, nicht nur
   angenommen).
+- **App-Icon**: offizielles mykilOS-"M"-Wortzeichen, auf dem Home-Bildschirm/
+  Dock des Simulators screenshotet.
+- **18 Unit-Tests grün**, **Grundriss-Liste** zum Wiederöffnen gespeicherter
+  Dokumente ergänzt.
 
 ## Was NUR compiliert, aber nicht am Gerät getestet ist
 
@@ -44,13 +48,15 @@ komplett aus, weil der Simulator das nicht kann.
   Projektdatenbank — die gibt es für die iPad-App noch nicht (bewusste
   Entscheidung, um nicht vorzeitig eine ganze Projektverwaltung nachzubauen,
   bevor geklärt ist, ob/wie die iPad-App an weclapp/mykilOS-Ökosystem andockt).
-- **Kein App-Icon.**
 - **Kein Cloud-Sync / Mehrgeräte-Abgleich** — alles lokal in `Documents/`
   (JSON-Manifeste + Bilddateien), gleiches Muster wie mykilOS iOS.
 - **Laser-Hersteller-Recherche** (Bosch, Einhell, Laserliner, Stanley, Worx
-  etc. — echte BLE-GATT-Protokolle statt nur Namens-Erkennung): lief als
-  Hintergrund-Recherche, Ergebnis in `docs/LASER_PROTOKOLL_RECHERCHE.md`
-  sobald fertig.
+  etc. — echte BLE-GATT-Protokolle statt nur Namens-Erkennung): als
+  Hintergrund-Recherche gestartet, bei Session-Ende **nicht abgeschlossen**
+  (kein Ergebnis in `docs/LASER_PROTOKOLL_RECHERCHE.md` — die Datei existiert
+  noch nicht). Ein erster Versuch brach ohne Ergebnis ab, ein zweiter lief
+  beim Schließen der Session noch. In einer Folge-Session prüfen, ob die
+  Datei inzwischen entstanden ist, sonst neu anstoßen.
 - **Grundriss-Editor "Formen"-Werkzeug**: bisher nur Schnell-Rechteck
   (4 Wände aus einer Diagonalen), keine Freihand-Formen — bewusst minimal
   gehalten, um kein halbfertiges Formen-System zu bauen.
@@ -62,6 +68,6 @@ komplett aus, weil der Simulator das nicht kann.
    "kein Raten"-Doktrin wie beim Leica-Protokoll).
 2. Echte Geräte-Session: Bluetooth-Kopplung mit einem echten Lasermessgerät,
    RoomPlan-Scan auf einem LiDAR-iPad, Apple-Pencil-Test.
-3. App-Icon + Launch-Screen-Feinschliff.
+3. Launch-Screen-Feinschliff (App-Icon ist bereits erledigt).
 4. Entscheiden, ob/wie Projekt-Zuordnung an eine echte Datenquelle (weclapp?
    lokale Projektliste wie in mykilOS iOS?) angebunden wird.
