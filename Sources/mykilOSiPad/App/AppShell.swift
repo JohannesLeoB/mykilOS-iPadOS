@@ -5,7 +5,7 @@ import SwiftUI
 /// mykilOS-CI (siehe `mykilos-core`-Skill: schwarze Sidebar, aktiv = 3px
 /// weißer Balken links, helle Inhaltsfläche, Großbuchstaben-Mono-Labels).
 enum AppModul: String, CaseIterable, Identifiable {
-    case heute, fang, feldFotos, projekte, grundriss, fotoBemassung, roomPlan, raumscans, verbindungen
+    case heute, fang, feldFotos, projekte, grundriss, fotoBemassung, roomPlan, raumscans, werkzeuge, verbindungen
 
     var id: String { rawValue }
 
@@ -15,7 +15,8 @@ enum AppModul: String, CaseIterable, Identifiable {
         case .fang, .feldFotos: return "02"
         case .projekte: return "03"
         case .grundriss, .fotoBemassung, .roomPlan, .raumscans: return "04"
-        case .verbindungen: return "05"
+        case .werkzeuge: return "05"
+        case .verbindungen: return "06"
         }
     }
 
@@ -25,6 +26,7 @@ enum AppModul: String, CaseIterable, Identifiable {
         case .fang, .feldFotos: return "FANG"
         case .projekte: return "PROJEKTE"
         case .grundriss, .fotoBemassung, .roomPlan, .raumscans: return "AUFMASS"
+        case .werkzeuge: return "WERKZEUGE"
         case .verbindungen: return "VERBINDUNGEN"
         }
     }
@@ -39,6 +41,7 @@ enum AppModul: String, CaseIterable, Identifiable {
         case .fotoBemassung: return "Foto-Bemaßung"
         case .roomPlan: return "RoomPlan-Scan"
         case .raumscans: return "Raumscan-Archiv"
+        case .werkzeuge: return "Werkzeuge"
         case .verbindungen: return "Verbindungen"
         }
     }
@@ -53,6 +56,7 @@ enum AppModul: String, CaseIterable, Identifiable {
         case .fotoBemassung: return "camera.viewfinder"
         case .roomPlan: return "cube.transparent"
         case .raumscans: return "archivebox"
+        case .werkzeuge: return "wrench.and.screwdriver"
         case .verbindungen: return "hand.raised"
         }
     }
@@ -141,7 +145,7 @@ struct AppShell: View {
     private struct ModulGruppe { let sektion: String; let titel: String; var module: [AppModul] }
 
     private var gruppierteSektionen: [ModulGruppe] {
-        let reihenfolge: [AppModul] = [.heute, .fang, .feldFotos, .projekte, .grundriss, .fotoBemassung, .roomPlan, .raumscans, .verbindungen]
+        let reihenfolge: [AppModul] = [.heute, .fang, .feldFotos, .projekte, .grundriss, .fotoBemassung, .roomPlan, .raumscans, .werkzeuge, .verbindungen]
         var ergebnis: [ModulGruppe] = []
         for modul in reihenfolge {
             if let letzte = ergebnis.last, letzte.sektion == modul.sektion {
@@ -190,6 +194,8 @@ struct AppShell: View {
             RoomPlanCaptureScreen(roomPlanStore: stores.roomPlanStore, projectStore: stores.projectStore)
         case .raumscans:
             RoomPlanListView(roomPlanStore: stores.roomPlanStore)
+        case .werkzeuge:
+            WerkzeugeView()
         case .verbindungen:
             VerbindungenView()
         }
