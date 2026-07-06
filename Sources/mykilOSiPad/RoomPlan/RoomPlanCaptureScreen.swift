@@ -2,19 +2,16 @@ import RoomPlan
 import SwiftUI
 import UIKit
 
-/// RoomPlan-Aufmaß: Projekt-/Raumtitel frei eintragen, Raum scannen (Apples
-/// eigene Scan-UI), Ergebnis als USDZ sichern. Braucht ein LiDAR-Gerät — auf
-/// anderen Geräten ehrlicher Fallback-Zustand statt Absturz.
-///
-/// Gegenüber mykilOS iOS angepasst: dort wurde ein Projekt aus einer
-/// bestehenden `ProjectStore`-Liste gewählt — die iPad-App hat (noch) keine
-/// eigene Projektverwaltung, deshalb freie Texteingabe für Projekt/Raum,
-/// konsistent mit dem lose gekoppelten `Aufmass`-Modell.
+/// RoomPlan-Aufmaß: echte Projektwahl (wie im Original `RoomPlanCaptureScreen`
+/// aus mykilOS iOS), Raum scannen (Apples eigene Scan-UI), Ergebnis als USDZ
+/// sichern. Braucht ein LiDAR-Gerät — auf anderen Geräten ehrlicher
+/// Fallback-Zustand statt Absturz.
 struct RoomPlanCaptureScreen: View {
     let roomPlanStore: RoomPlanStore
+    let projectStore: ProjectStore
 
-    @State private var projectNumber = ""
-    @State private var projectTitel = ""
+    @State private var projektSuche = ""
+    @State private var gewaehltesProjekt: Project?
     @State private var raumTitel = ""
     @State private var zeigeScan = false
     @State private var stoppAnfrage = false
@@ -23,13 +20,34 @@ struct RoomPlanCaptureScreen: View {
     @State private var gespeichert = false
     @State private var exportDatei: ExportDatei?
 
+    private var projekte: [Project] {
+        projectStore.matching(projektSuche).sorted { $0.projectNumber > $1.projectNumber }
+    }
+
     var body: some View {
         Group {
             if RoomCaptureSession.isSupported {
                 Form {
-                    Section("Zuordnung (optional)") {
-                        TextField("Projekt", text: $projectTitel)
-                        TextField("Projektnummer", text: $projectNumber)
+                    Section("Projekt — nie geraten, immer bestätigt") {
+                        TextField("Projekt suchen…", text: $projektSuche)
+                        ForEach(projekte.prefix(5)) { project in
+                            Button {
+                                gewaehltesProjekt = project
+                            } label: {
+                                HStack {
+                                    Text(project.title)
+                                    Spacer()
+                                    Text(project.projectNumber)
+                                        .font(.system(.caption, design: .monospaced))
+                                        .foregroundStyle(MykColor.muted)
+                                    if gewaehltesProjekt?.id == project.id {
+                                        Image(systemName: "checkmark.circle.fill")
+                                            .foregroundStyle(MykColor.brand)
+                                    }
+                                }
+                            }
+                            .foregroundStyle(MykColor.ink)
+                        }
                         TextField("Raum, z. B. \"Küche EG\"", text: $raumTitel)
                     }
 
@@ -106,8 +124,8 @@ struct RoomPlanCaptureScreen: View {
         do {
             try roomPlanStore.aufnehmen(
                 usdzQuelle: url,
-                projectNumber: projectNumber.isEmpty ? nil : projectNumber,
-                projectTitel: projectTitel.isEmpty ? nil : projectTitel,
+                projectNumber: gewaehltesProjekt?.projectNumber,
+                projectTitel: gewaehltesProjekt?.title,
                 raumTitel: raumTitel.isEmpty ? nil : raumTitel
             )
             gespeichert = true
@@ -140,6 +158,6 @@ struct RoomPlanCaptureScreen: View {
 
 #Preview {
     NavigationStack {
-        RoomPlanCaptureScreen(roomPlanStore: RoomPlanStore())
+        RoomPlanCaptureScreen(roomPlanStore: RoomPlanStore(), projectStore: ProjectStore())
     }
 }

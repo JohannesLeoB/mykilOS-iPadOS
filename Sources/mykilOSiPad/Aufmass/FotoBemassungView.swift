@@ -9,15 +9,17 @@ import PencilKit
 /// gespeichert.
 ///
 /// Portiert aus mykilOS iOS (`FotoBemassungView.swift`), zwei Änderungen:
-/// 1. Keine `ProjectStore`/`FeldFotoStore`-Kopplung (existiert hier noch
-///    nicht) — Projekt-/Raum-Zuordnung ist freie Texteingabe, konsistent mit
-///    dem lose gekoppelten `Aufmass`-Modell. "Als Feld-Foto ablegen" entfällt.
+/// 1. Echte `ProjectStore`-Kopplung (Projektwahl-Sheet wie im Original),
+///    aber (noch) keine `FeldFotoStore`-Kopplung — "Als Feld-Foto ablegen"
+///    entfällt, bis dieses Subsystem portiert ist.
 /// 2. Neues fünftes Werkzeug **Freihand** (Apple Pencil, PencilKit) — in
 ///    myMini noch gar nicht vorhanden.
 struct FotoBemassungView: View {
     var aufmassStore: AufmassStore
+    var projectStore: ProjectStore
 
     private let laser = BluetoothLaserScanner.shared
+    @State private var projektSuche = ""
 
     private enum Werkzeug { case masslinie, notiz, symbol, winkel, freihand }
     private enum EditZiel: Identifiable {
@@ -598,37 +600,54 @@ struct FotoBemassungView: View {
         return CGSize(width: bildGroesse.width * skala, height: bildGroesse.height * skala)
     }
 
-    // MARK: Zuordnung (frei, ohne Projektverwaltung)
+    // MARK: Zuordnung (echte Projekt-Auswahl statt Freitext)
 
     private var zuordnungSheet: some View {
         NavigationStack {
             Form {
-                Section("Zuordnung (optional)") {
-                    TextField("Projekt", text: Binding(
-                        get: { dok?.projectTitel ?? "" },
-                        set: { neu in dok?.projectTitel = neu.isEmpty ? nil : neu }
-                    ))
-                    TextField("Projektnummer", text: Binding(
-                        get: { dok?.projectNumber ?? "" },
-                        set: { neu in dok?.projectNumber = neu.isEmpty ? nil : neu }
-                    ))
-                    TextField("Raum", text: Binding(
+                Section("Raum") {
+                    TextField("Raum, z. B. \"Küche EG\"", text: Binding(
                         get: { dok?.raumTitel ?? "" },
                         set: { neu in dok?.raumTitel = neu.isEmpty ? nil : neu }
                     ))
                 }
+                Section {
+                    Button("Ohne Projekt") { zuordnen(nil) }
+                        .foregroundStyle(MykColor.muted)
+                    ForEach(projectStore.matching(projektSuche).sorted { $0.projectNumber > $1.projectNumber }.prefix(20)) { project in
+                        Button { zuordnen(project) } label: {
+                            HStack {
+                                Text(project.title).foregroundStyle(MykColor.ink)
+                                Spacer()
+                                Text(project.projectNumber)
+                                    .font(.system(.caption, design: .monospaced))
+                                    .foregroundStyle(MykColor.muted)
+                                if dok?.projectNumber == project.projectNumber {
+                                    Image(systemName: "checkmark.circle.fill").foregroundStyle(MykColor.brand)
+                                }
+                            }
+                        }
+                    }
+                } header: {
+                    Text("Projekt — nie geraten, immer bestätigt")
+                }
             }
+            .searchable(text: $projektSuche, prompt: "Projekt suchen")
             .navigationTitle("Zuordnung")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
-                    Button("Fertig") {
-                        if let d = dok { speichere(d) }
-                        zeigeZuordnung = false
-                    }
+                    Button("Fertig") { zeigeZuordnung = false }
                 }
             }
         }
+    }
+
+    private func zuordnen(_ project: Project?) {
+        guard var d = dok else { return }
+        d.projectNumber = project?.projectNumber
+        d.projectTitel = project?.title
+        speichere(d)
     }
 
     // MARK: Export
@@ -701,6 +720,6 @@ private struct LupeOverlay: View {
 
 #Preview {
     NavigationStack {
-        FotoBemassungView(aufmassStore: AufmassStore())
+        FotoBemassungView(aufmassStore: AufmassStore(), projectStore: ProjectStore())
     }
 }
