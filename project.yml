@@ -26,6 +26,7 @@ targets:
     info:
       path: Sources/mykilOSiPad/Info.plist
       properties:
+        CFBundleDisplayName: mykilOS
         UILaunchScreen: {}
         UISupportedInterfaceOrientations:
           - UIInterfaceOrientationPortrait

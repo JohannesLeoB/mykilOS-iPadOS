@@ -20,6 +20,7 @@
 		5E0792B95AEC193EAD201D23 /* ABCMonumentGroteskMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F3E0139794EFFBA81709FFD /* ABCMonumentGroteskMono-Regular.otf */; };
 		607CA7A3501FBD12BA3F27A7 /* PKCanvasRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E529A9C666B905CBD742D08 /* PKCanvasRepresentable.swift */; };
 		6186AE81C10ECC2A8F616F09 /* Fehlertext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E11BBE9332AE03C0BFFF310 /* Fehlertext.swift */; };
+		6DEB8E43B343D769C92777B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0359BCF33C73DB8AC152292D /* Assets.xcassets */; };
 		6FD1E58346DFD43954FB24EA /* GrundrissCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E1B06130DF373BBBB5CC70 /* GrundrissCanvasView.swift */; };
 		7A11E50F6AB641B31FFD0B0A /* GrundrissEditorModus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CD599A89480D3545013027 /* GrundrissEditorModus.swift */; };
 		7BAF27F852FB8713B119A6D5 /* GrundrissEditorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9132AFDB40ACCB1B92469C /* GrundrissEditorStore.swift */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		01BEB9FF0A9C6D26E53A46FD /* GrundrissGeometrieHilfen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissGeometrieHilfen.swift; sourceTree = "<group>"; };
+		0359BCF33C73DB8AC152292D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0403A308ACCE419435F19048 /* LaserAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaserAdapter.swift; sourceTree = "<group>"; };
 		0B1F7F212FA78D4D717A0438 /* BluetoothLaserScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothLaserScanner.swift; sourceTree = "<group>"; };
 		15335A6A102E64D3B97E5DA4 /* KameraAufnahmeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KameraAufnahmeView.swift; sourceTree = "<group>"; };
@@ -259,6 +261,7 @@
 		CA01EB53BAB91E5810D33907 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0359BCF33C73DB8AC152292D /* Assets.xcassets */,
 				9B573450A8235CF444A36377 /* Fonts */,
 			);
 			path = Resources;
@@ -368,6 +371,7 @@
 			files = (
 				4E07B3B8BE014CF5876EBC53 /* ABCMonumentGrotesk-Medium.otf in Resources */,
 				5E0792B95AEC193EAD201D23 /* ABCMonumentGroteskMono-Regular.otf in Resources */,
+				6DEB8E43B343D769C92777B0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
