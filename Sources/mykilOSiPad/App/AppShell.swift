@@ -195,7 +195,7 @@ struct AppShell: View {
         case .raumscans:
             RoomPlanListView(roomPlanStore: stores.roomPlanStore)
         case .werkzeuge:
-            WerkzeugeView()
+            WerkzeugeView(store: stores.projectStore)
         case .verbindungen:
             VerbindungenView()
         }

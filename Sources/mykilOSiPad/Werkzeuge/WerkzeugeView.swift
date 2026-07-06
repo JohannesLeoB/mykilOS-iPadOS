@@ -5,6 +5,8 @@ import SwiftUI
 /// Antwort. Portiert aus mykilOS iOS (`WerkzeugeView`) und wächst hier
 /// Baustein für Baustein mit; gelistet wird nur, was schon portiert ist.
 struct WerkzeugeView: View {
+    let store: ProjectStore
+
     @State private var barcodeLog = BarcodeLogStore()
     @State private var wareneingangLog = WareneingangsLogStore()
 
@@ -52,6 +54,18 @@ struct WerkzeugeView: View {
                 unter: "Rohdaten-Log, kein Bestell-Abgleich",
                 symbol: "shippingbox"
             )
+            werkzeug(
+                ziel: { AbnahmeprotokollView(store: store) },
+                titel: "Abnahmeprotokoll",
+                unter: "Diktat + Foto, nummeriert je Projekt",
+                symbol: "list.number"
+            )
+            werkzeug(
+                ziel: { VertragSignierenView(store: store) },
+                titel: "Vertrag signieren",
+                unter: "Geführt: PDF + Unterschrift + SHA-256-Siegel",
+                symbol: "signature"
+            )
         }
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
@@ -88,6 +102,6 @@ struct WerkzeugeView: View {
 
 #Preview {
     NavigationStack {
-        WerkzeugeView()
+        WerkzeugeView(store: ProjectStore())
     }
 }
