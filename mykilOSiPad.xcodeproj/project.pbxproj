@@ -56,6 +56,7 @@
 		6FD1E58346DFD43954FB24EA /* GrundrissCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E1B06130DF373BBBB5CC70 /* GrundrissCanvasView.swift */; };
 		702738D5177F9343E92F04CD /* AppStores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 166BCDD18296E2774F33A9C1 /* AppStores.swift */; };
 		702A9A4199A708CA11F54A0A /* FeldFotoBestaetigungView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856DA30A0CE1FD00297D9B8A /* FeldFotoBestaetigungView.swift */; };
+		717D30355322359AC92DFE94 /* WerkzeugeStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CA585BBAEBB190F94DEBB0 /* WerkzeugeStoreTests.swift */; };
 		79CC72E15170D7E17272682F /* ARAnkerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 384728F5862A6C15422ABA7C /* ARAnkerScreen.swift */; };
 		7A11E50F6AB641B31FFD0B0A /* GrundrissEditorModus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CD599A89480D3545013027 /* GrundrissEditorModus.swift */; };
 		7BAF27F852FB8713B119A6D5 /* GrundrissEditorStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9132AFDB40ACCB1B92469C /* GrundrissEditorStore.swift */; };
@@ -71,10 +72,12 @@
 		89AC33D5D73D527548C14CE9 /* KameraLevelSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0806D091E3E66DE241858 /* KameraLevelSensor.swift */; };
 		8B14812ABBE4F8EB3D4BC2E4 /* GrundrissPDFRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1634B391CF6A663992AA4517 /* GrundrissPDFRenderer.swift */; };
 		8EA5BE9575013F32EA6AAA32 /* AbnahmeprotokollStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D4507AA6CB1AA8EA5E88A1C /* AbnahmeprotokollStore.swift */; };
+		998E21C9A3A569CC9DBD3E56 /* ARMassbandMesserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957311585417240095D0C2B1 /* ARMassbandMesserTests.swift */; };
 		9DF184AC2DC86CD6AFA85E74 /* PostboxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133CB20F084188BE534450C6 /* PostboxItem.swift */; };
 		A21BEFEF9A960E03B55985E9 /* BeleuchtungsCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECB8FF75EEAD7AE426081746 /* BeleuchtungsCheckView.swift */; };
 		A649D7F5D77259A08428E5CF /* RoomPlanCaptureBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7A627871874CEE360CD359 /* RoomPlanCaptureBridge.swift */; };
 		A82467FB41EF549E63EDB951 /* MykTypography.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82B65480B0F0CF6A52D30DF /* MykTypography.swift */; };
+		A861362C71A3E301C80CD4F0 /* GewerkeTypTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E990375D30CEA6C06571D5AC /* GewerkeTypTests.swift */; };
 		A93F4E4F769650C8E582E0B6 /* VisitenkartenOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1FCD050A591A08237AAC16 /* VisitenkartenOCR.swift */; };
 		AD2FE7C82BF713699487F8D8 /* BemassungsRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168E37F8A2A013E17A450F9 /* BemassungsRenderer.swift */; };
 		AD6E9688E63D0EA3854506DB /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6C9D021B5015F839A8574B0 /* Project.swift */; };
@@ -188,6 +191,7 @@
 		9371D79A4D18E567E9A95FCC /* KontaktSchreiber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KontaktSchreiber.swift; sourceTree = "<group>"; };
 		93807051862A032391524DDE /* EinmaligerOrtsSensor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EinmaligerOrtsSensor.swift; sourceTree = "<group>"; };
 		942A711295D97E0094EE8980 /* WasserwaageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WasserwaageView.swift; sourceTree = "<group>"; };
+		957311585417240095D0C2B1 /* ARMassbandMesserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARMassbandMesserTests.swift; sourceTree = "<group>"; };
 		95E32453A742C42B3404EA97 /* RaumGeometrieExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaumGeometrieExtractor.swift; sourceTree = "<group>"; };
 		97CD599A89480D3545013027 /* GrundrissEditorModus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissEditorModus.swift; sourceTree = "<group>"; };
 		98E1B06130DF373BBBB5CC70 /* GrundrissCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissCanvasView.swift; sourceTree = "<group>"; };
@@ -220,8 +224,10 @@
 		E52F69946C4946AA1E6F7368 /* RaumakustikMesser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaumakustikMesser.swift; sourceTree = "<group>"; };
 		E5C09217F62B2A2470893755 /* PostboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostboxView.swift; sourceTree = "<group>"; };
 		E86366473F2549CDC67CF633 /* GrundrissEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissEditorScreen.swift; sourceTree = "<group>"; };
+		E990375D30CEA6C06571D5AC /* GewerkeTypTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GewerkeTypTests.swift; sourceTree = "<group>"; };
 		ECB8FF75EEAD7AE426081746 /* BeleuchtungsCheckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeleuchtungsCheckView.swift; sourceTree = "<group>"; };
 		F168E37F8A2A013E17A450F9 /* BemassungsRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BemassungsRenderer.swift; sourceTree = "<group>"; };
+		F7CA585BBAEBB190F94DEBB0 /* WerkzeugeStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerkzeugeStoreTests.swift; sourceTree = "<group>"; };
 		F8855B31E609800BE6D14A03 /* WerkzeugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WerkzeugeView.swift; sourceTree = "<group>"; };
 		FB96E189CC73CFA73699000D /* Aufmass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Aufmass.swift; sourceTree = "<group>"; };
 		FBDECE41104BD8814079CC8B /* mykilOSiPad.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = mykilOSiPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -233,9 +239,12 @@
 		0045AEF6A4AC2F39A4D17D05 /* mykilOSiPadTests */ = {
 			isa = PBXGroup;
 			children = (
+				957311585417240095D0C2B1 /* ARMassbandMesserTests.swift */,
 				AC4B57B00D36F558FF218D01 /* AufmassModelTests.swift */,
+				E990375D30CEA6C06571D5AC /* GewerkeTypTests.swift */,
 				D2AED4CCE55F40A5C7A40CF5 /* GrundrissGeometrieHilfenTests.swift */,
 				3FE03FC39F8ECF69BD7A606D /* LeicaDistoProtokollTests.swift */,
+				F7CA585BBAEBB190F94DEBB0 /* WerkzeugeStoreTests.swift */,
 			);
 			path = mykilOSiPadTests;
 			sourceTree = "<group>";
@@ -660,9 +669,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				998E21C9A3A569CC9DBD3E56 /* ARMassbandMesserTests.swift in Sources */,
 				35B56FFC58658474063D24B2 /* AufmassModelTests.swift in Sources */,
+				A861362C71A3E301C80CD4F0 /* GewerkeTypTests.swift in Sources */,
 				DD3BB3B1869200C27E34CE14 /* GrundrissGeometrieHilfenTests.swift in Sources */,
 				E237D3FB32EF13F26EFE7C08 /* LeicaDistoProtokollTests.swift in Sources */,
+				717D30355322359AC92DFE94 /* WerkzeugeStoreTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
