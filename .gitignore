@@ -10,3 +10,4 @@ xcuserdata/
 *.dSYM
 .swiftpm/
 .build/
+.claude/scheduled_tasks.lock
