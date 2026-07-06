@@ -40,6 +40,7 @@
 		CAAD85196F598316C42EF714 /* MykColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D1BC2282B4BA125D9BA57 /* MykColor.swift */; };
 		CF24414F943F864AB253AA15 /* GrundrissDokument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB59A5B9A6E6DAC3EFC6D60 /* GrundrissDokument.swift */; };
 		DD3BB3B1869200C27E34CE14 /* GrundrissGeometrieHilfenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AED4CCE55F40A5C7A40CF5 /* GrundrissGeometrieHilfenTests.swift */; };
+		DD8526827B2F1F0853A56A21 /* GrundrissListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A36863D5793DD2314995EDE /* GrundrissListView.swift */; };
 		E237D3FB32EF13F26EFE7C08 /* LeicaDistoProtokollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE03FC39F8ECF69BD7A606D /* LeicaDistoProtokollTests.swift */; };
 		E5B606710BB08538346A8D23 /* RoomPlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AEE13491BC4AD16E753EA7 /* RoomPlanStore.swift */; };
 		E5E4F0AA06A8AA3FEEC49654 /* TeilenAnsicht.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FBBEFE744E3BD2A89BBD0 /* TeilenAnsicht.swift */; };
@@ -85,6 +86,7 @@
 		95E32453A742C42B3404EA97 /* RaumGeometrieExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaumGeometrieExtractor.swift; sourceTree = "<group>"; };
 		97CD599A89480D3545013027 /* GrundrissEditorModus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissEditorModus.swift; sourceTree = "<group>"; };
 		98E1B06130DF373BBBB5CC70 /* GrundrissCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissCanvasView.swift; sourceTree = "<group>"; };
+		9A36863D5793DD2314995EDE /* GrundrissListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissListView.swift; sourceTree = "<group>"; };
 		9DC2182DEDC79FC0C41D25D4 /* BLEGeraet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEGeraet.swift; sourceTree = "<group>"; };
 		ABE250F940CBAC0A474B7D1D /* LeicaDistoProtokoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeicaDistoProtokoll.swift; sourceTree = "<group>"; };
 		AC4B57B00D36F558FF218D01 /* AufmassModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AufmassModelTests.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				E86366473F2549CDC67CF633 /* GrundrissEditorScreen.swift */,
 				5F9132AFDB40ACCB1B92469C /* GrundrissEditorStore.swift */,
 				01BEB9FF0A9C6D26E53A46FD /* GrundrissGeometrieHilfen.swift */,
+				9A36863D5793DD2314995EDE /* GrundrissListView.swift */,
 			);
 			path = GrundrissEditor;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				C62D732CAA1B89E358E8E7D5 /* GrundrissEditorScreen.swift in Sources */,
 				7BAF27F852FB8713B119A6D5 /* GrundrissEditorStore.swift in Sources */,
 				805106AA495EC1AD8846EF36 /* GrundrissGeometrieHilfen.swift in Sources */,
+				DD8526827B2F1F0853A56A21 /* GrundrissListView.swift in Sources */,
 				8B14812ABBE4F8EB3D4BC2E4 /* GrundrissPDFRenderer.swift in Sources */,
 				F068F662429FA384FF682BD2 /* KameraAufnahmeView.swift in Sources */,
 				89AC33D5D73D527548C14CE9 /* KameraLevelSensor.swift in Sources */,

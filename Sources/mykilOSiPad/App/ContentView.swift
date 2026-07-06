@@ -14,7 +14,7 @@ struct ContentView: View {
         NavigationSplitView {
             List {
                 NavigationLink("Grundriss-Editor") {
-                    GrundrissEditorScreen(store: grundrissStore, dokument: GrundrissDokument())
+                    GrundrissListView(store: grundrissStore)
                 }
                 NavigationLink("Foto-Bemaßung") {
                     FotoBemassungView(aufmassStore: aufmassStore)
