@@ -59,6 +59,9 @@ targets:
       - path: Tests/mykilOSiPadTests
     dependencies:
       - target: mykilOSiPad
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
 
 schemes:
   mykilOSiPad:

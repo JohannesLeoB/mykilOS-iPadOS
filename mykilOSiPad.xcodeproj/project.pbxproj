@@ -14,6 +14,7 @@
 		1B95C2140F4F427D042A5B4D /* LeicaDistoProtokoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE250F940CBAC0A474B7D1D /* LeicaDistoProtokoll.swift */; };
 		20E293B9A5CC1EB120C74C3C /* FotoBemassungView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83A298E30CB8750B4D1E1EBD /* FotoBemassungView.swift */; };
 		3518517129B30326B8A7EE76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D46394548E2B1FCE3F9834 /* ContentView.swift */; };
+		35B56FFC58658474063D24B2 /* AufmassModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B57B00D36F558FF218D01 /* AufmassModelTests.swift */; };
 		4E07B3B8BE014CF5876EBC53 /* ABCMonumentGrotesk-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA7C45B072BE357D6833196 /* ABCMonumentGrotesk-Medium.otf */; };
 		552CC59EB65955C34EACBC23 /* RaumGeometrie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A3E8CBF84BD14509469F5 /* RaumGeometrie.swift */; };
 		5E0792B95AEC193EAD201D23 /* ABCMonumentGroteskMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1F3E0139794EFFBA81709FFD /* ABCMonumentGroteskMono-Regular.otf */; };
@@ -37,6 +38,8 @@
 		C8D251A13255FD72701316FC /* BluetoothLaserScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1F7F212FA78D4D717A0438 /* BluetoothLaserScanner.swift */; };
 		CAAD85196F598316C42EF714 /* MykColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644D1BC2282B4BA125D9BA57 /* MykColor.swift */; };
 		CF24414F943F864AB253AA15 /* GrundrissDokument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB59A5B9A6E6DAC3EFC6D60 /* GrundrissDokument.swift */; };
+		DD3BB3B1869200C27E34CE14 /* GrundrissGeometrieHilfenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AED4CCE55F40A5C7A40CF5 /* GrundrissGeometrieHilfenTests.swift */; };
+		E237D3FB32EF13F26EFE7C08 /* LeicaDistoProtokollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE03FC39F8ECF69BD7A606D /* LeicaDistoProtokollTests.swift */; };
 		E5B606710BB08538346A8D23 /* RoomPlanStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AEE13491BC4AD16E753EA7 /* RoomPlanStore.swift */; };
 		E5E4F0AA06A8AA3FEEC49654 /* TeilenAnsicht.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC8FBBEFE744E3BD2A89BBD0 /* TeilenAnsicht.swift */; };
 		E8A3B623323B450119F8BFDE /* RaumGeometrieExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E32453A742C42B3404EA97 /* RaumGeometrieExtractor.swift */; };
@@ -63,6 +66,7 @@
 		1F3E0139794EFFBA81709FFD /* ABCMonumentGroteskMono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ABCMonumentGroteskMono-Regular.otf"; sourceTree = "<group>"; };
 		282A3E8CBF84BD14509469F5 /* RaumGeometrie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaumGeometrie.swift; sourceTree = "<group>"; };
 		2FB7B785D48238075344E076 /* AufmassStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AufmassStore.swift; sourceTree = "<group>"; };
+		3FE03FC39F8ECF69BD7A606D /* LeicaDistoProtokollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeicaDistoProtokollTests.swift; sourceTree = "<group>"; };
 		510EB2FED31BBDF9C302E04B /* RoomPlanListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomPlanListView.swift; sourceTree = "<group>"; };
 		53616E404936F6F13C16DB63 /* AufmassPDFRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AufmassPDFRenderer.swift; sourceTree = "<group>"; };
 		5F9132AFDB40ACCB1B92469C /* GrundrissEditorStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissEditorStore.swift; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 		98E1B06130DF373BBBB5CC70 /* GrundrissCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissCanvasView.swift; sourceTree = "<group>"; };
 		9DC2182DEDC79FC0C41D25D4 /* BLEGeraet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEGeraet.swift; sourceTree = "<group>"; };
 		ABE250F940CBAC0A474B7D1D /* LeicaDistoProtokoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeicaDistoProtokoll.swift; sourceTree = "<group>"; };
+		AC4B57B00D36F558FF218D01 /* AufmassModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AufmassModelTests.swift; sourceTree = "<group>"; };
 		AC8FBBEFE744E3BD2A89BBD0 /* TeilenAnsicht.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeilenAnsicht.swift; sourceTree = "<group>"; };
 		AFA905A6C086C7D5D7492E3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B03AA4D4C721EA023A5FA139 /* mykilOSiPadTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = mykilOSiPadTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +93,7 @@
 		B5AEE13491BC4AD16E753EA7 /* RoomPlanStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomPlanStore.swift; sourceTree = "<group>"; };
 		C82B65480B0F0CF6A52D30DF /* MykTypography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MykTypography.swift; sourceTree = "<group>"; };
 		CB1B971F5BFB851DF6F606BF /* GrundrissDXFExporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissDXFExporter.swift; sourceTree = "<group>"; };
+		D2AED4CCE55F40A5C7A40CF5 /* GrundrissGeometrieHilfenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissGeometrieHilfenTests.swift; sourceTree = "<group>"; };
 		E86366473F2549CDC67CF633 /* GrundrissEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissEditorScreen.swift; sourceTree = "<group>"; };
 		F168E37F8A2A013E17A450F9 /* BemassungsRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BemassungsRenderer.swift; sourceTree = "<group>"; };
 		F1D46394548E2B1FCE3F9834 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -99,6 +105,9 @@
 		0045AEF6A4AC2F39A4D17D05 /* mykilOSiPadTests */ = {
 			isa = PBXGroup;
 			children = (
+				AC4B57B00D36F558FF218D01 /* AufmassModelTests.swift */,
+				D2AED4CCE55F40A5C7A40CF5 /* GrundrissGeometrieHilfenTests.swift */,
+				3FE03FC39F8ECF69BD7A606D /* LeicaDistoProtokollTests.swift */,
 			);
 			path = mykilOSiPadTests;
 			sourceTree = "<group>";
@@ -369,6 +378,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35B56FFC58658474063D24B2 /* AufmassModelTests.swift in Sources */,
+				DD3BB3B1869200C27E34CE14 /* GrundrissGeometrieHilfenTests.swift in Sources */,
+				E237D3FB32EF13F26EFE7C08 /* LeicaDistoProtokollTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -549,6 +562,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
