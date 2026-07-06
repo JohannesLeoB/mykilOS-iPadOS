@@ -6,6 +6,7 @@ import SwiftUI
 /// Baustein für Baustein mit; gelistet wird nur, was schon portiert ist.
 struct WerkzeugeView: View {
     let store: ProjectStore
+    let feldFotoStore: FeldFotoStore
 
     @State private var barcodeLog = BarcodeLogStore()
     @State private var wareneingangLog = WareneingangsLogStore()
@@ -66,6 +67,18 @@ struct WerkzeugeView: View {
                 unter: "Geführt: PDF + Unterschrift + SHA-256-Siegel",
                 symbol: "signature"
             )
+            werkzeug(
+                ziel: { ServiceAnfrageView(store: store, feldFotoStore: feldFotoStore) },
+                titel: "Service-Anfrage",
+                unter: "Vorbefüllte Mail an den Servicepartner",
+                symbol: "wrench.adjustable.fill"
+            )
+            werkzeug(
+                ziel: { KontakteVerzeichnisView() },
+                titel: "Kontakte",
+                unter: "Kunden-Verzeichnis (Airtable-Sync folgt)",
+                symbol: "person.crop.circle"
+            )
         }
         .listStyle(.insetGrouped)
         .scrollContentBackground(.hidden)
@@ -102,6 +115,6 @@ struct WerkzeugeView: View {
 
 #Preview {
     NavigationStack {
-        WerkzeugeView(store: ProjectStore())
+        WerkzeugeView(store: ProjectStore(), feldFotoStore: FeldFotoStore())
     }
 }
