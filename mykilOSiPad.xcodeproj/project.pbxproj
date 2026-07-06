@@ -20,12 +20,14 @@
 		27B2C98F3F7FE24DB5BAB4D1 /* WasserwaageSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8829BE8D9AAA0B0F28FFF /* WasserwaageSensor.swift */; };
 		2C2D62E905B8864F0CF80D1A /* FangKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D48FA0867F8B43903C0C69A /* FangKind.swift */; };
 		3214CEBC7173C3F614883872 /* AppShell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8491871581859EAC417620 /* AppShell.swift */; };
+		35686C8694F2C8BC4EDC1578 /* BarcodeScannerScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E1B6A1CAAF7FFB6D12E53FB /* BarcodeScannerScreen.swift */; };
 		35B56FFC58658474063D24B2 /* AufmassModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC4B57B00D36F558FF218D01 /* AufmassModelTests.swift */; };
 		39F206822F09B89094696A8D /* PostboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C09217F62B2A2470893755 /* PostboxView.swift */; };
 		402EC103621E7B75D29A6158 /* ProjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533A5B1D96304ACAA567C975 /* ProjectDetailView.swift */; };
 		45B711400E14B843442A6E86 /* ProjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D30D25FEBF66E3BF0F51881F /* ProjectStore.swift */; };
 		4E07B3B8BE014CF5876EBC53 /* ABCMonumentGrotesk-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BA7C45B072BE357D6833196 /* ABCMonumentGrotesk-Medium.otf */; };
 		4F10DFFF4A24673D676B1B94 /* EinmaligerOrtsSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93807051862A032391524DDE /* EinmaligerOrtsSensor.swift */; };
+		5326FEDBFC2D97E41EADE7B5 /* BarcodeLogListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C5A4996BA9DEC198E8664B0 /* BarcodeLogListView.swift */; };
 		552CC59EB65955C34EACBC23 /* RaumGeometrie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282A3E8CBF84BD14509469F5 /* RaumGeometrie.swift */; };
 		560054BB8269743B804ECDD0 /* PostboxStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E47CC078E32077EE706F9DD /* PostboxStore.swift */; };
 		5914ACFEB11EF034DBA5FFEC /* RaumakustikMesser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E52F69946C4946AA1E6F7368 /* RaumakustikMesser.swift */; };
@@ -44,6 +46,7 @@
 		7E9D26B4C5508D8D95F475E5 /* AufmassPDFRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53616E404936F6F13C16DB63 /* AufmassPDFRenderer.swift */; };
 		805106AA495EC1AD8846EF36 /* GrundrissGeometrieHilfen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01BEB9FF0A9C6D26E53A46FD /* GrundrissGeometrieHilfen.swift */; };
 		85A4508C936B41399FC34450 /* LaserAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0403A308ACCE419435F19048 /* LaserAdapter.swift */; };
+		86497978519B2820CDAB87E2 /* BarcodeLogStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02878E3BD01184779D0B8B7C /* BarcodeLogStore.swift */; };
 		8665AF23C29A9AD462774546 /* FeldFoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDDE5E2077D5E2C992C9967 /* FeldFoto.swift */; };
 		881273554A252E776EB20697 /* FarbtemperaturAnalyse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A56F5A018574166DC6061 /* FarbtemperaturAnalyse.swift */; };
 		89AC33D5D73D527548C14CE9 /* KameraLevelSensor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB0806D091E3E66DE241858 /* KameraLevelSensor.swift */; };
@@ -65,6 +68,7 @@
 		CC12BDA48253DEFC07F52FB1 /* WerkzeugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8855B31E609800BE6D14A03 /* WerkzeugeView.swift */; };
 		CF24414F943F864AB253AA15 /* GrundrissDokument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB59A5B9A6E6DAC3EFC6D60 /* GrundrissDokument.swift */; };
 		D302089EF88F1701DF70F9EC /* LaserKopplungView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BAD9A7309947D2E20862378 /* LaserKopplungView.swift */; };
+		D53C9C9EB5EF0FA8A8B74A56 /* BarcodeScannerBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFD74D6F8CAEF909EF24D58 /* BarcodeScannerBridge.swift */; };
 		DD3BB3B1869200C27E34CE14 /* GrundrissGeometrieHilfenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2AED4CCE55F40A5C7A40CF5 /* GrundrissGeometrieHilfenTests.swift */; };
 		DD8526827B2F1F0853A56A21 /* GrundrissListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A36863D5793DD2314995EDE /* GrundrissListView.swift */; };
 		E237D3FB32EF13F26EFE7C08 /* LeicaDistoProtokollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE03FC39F8ECF69BD7A606D /* LeicaDistoProtokollTests.swift */; };
@@ -74,6 +78,7 @@
 		E95F423D443937B28D31EA1E /* GrundrissDXFExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1B971F5BFB851DF6F606BF /* GrundrissDXFExporter.swift */; };
 		EEDB3763EDB018A2407FF4BF /* FarbtemperaturCheckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABBCA0DDBC442E97B787AD3 /* FarbtemperaturCheckView.swift */; };
 		F068F662429FA384FF682BD2 /* KameraAufnahmeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15335A6A102E64D3B97E5DA4 /* KameraAufnahmeView.swift */; };
+		F6AD9A4FDD45748B3852F666 /* BarcodeTreffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 296F2A785BF2266776FFD040 /* BarcodeTreffer.swift */; };
 		FCD392DAD0BE54D8D1D7D8F3 /* VerbindungenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B01999ABC12ED7D1502D4A2 /* VerbindungenView.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,19 +94,24 @@
 
 /* Begin PBXFileReference section */
 		01BEB9FF0A9C6D26E53A46FD /* GrundrissGeometrieHilfen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissGeometrieHilfen.swift; sourceTree = "<group>"; };
+		02878E3BD01184779D0B8B7C /* BarcodeLogStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeLogStore.swift; sourceTree = "<group>"; };
 		0359BCF33C73DB8AC152292D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0403A308ACCE419435F19048 /* LaserAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaserAdapter.swift; sourceTree = "<group>"; };
 		0B1F7F212FA78D4D717A0438 /* BluetoothLaserScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothLaserScanner.swift; sourceTree = "<group>"; };
+		0C5A4996BA9DEC198E8664B0 /* BarcodeLogListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeLogListView.swift; sourceTree = "<group>"; };
 		133CB20F084188BE534450C6 /* PostboxItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostboxItem.swift; sourceTree = "<group>"; };
 		15335A6A102E64D3B97E5DA4 /* KameraAufnahmeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KameraAufnahmeView.swift; sourceTree = "<group>"; };
 		1634B391CF6A663992AA4517 /* GrundrissPDFRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrundrissPDFRenderer.swift; sourceTree = "<group>"; };
 		166BCDD18296E2774F33A9C1 /* AppStores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStores.swift; sourceTree = "<group>"; };
+		1BFD74D6F8CAEF909EF24D58 /* BarcodeScannerBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerBridge.swift; sourceTree = "<group>"; };
 		1E49A637277E096FE13453B2 /* HeuteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeuteView.swift; sourceTree = "<group>"; };
 		1F3E0139794EFFBA81709FFD /* ABCMonumentGroteskMono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ABCMonumentGroteskMono-Regular.otf"; sourceTree = "<group>"; };
 		282A3E8CBF84BD14509469F5 /* RaumGeometrie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaumGeometrie.swift; sourceTree = "<group>"; };
+		296F2A785BF2266776FFD040 /* BarcodeTreffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeTreffer.swift; sourceTree = "<group>"; };
 		2FB7B785D48238075344E076 /* AufmassStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AufmassStore.swift; sourceTree = "<group>"; };
 		35DAED62CF51C6B732A3D390 /* FangCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FangCard.swift; sourceTree = "<group>"; };
 		3B01999ABC12ED7D1502D4A2 /* VerbindungenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerbindungenView.swift; sourceTree = "<group>"; };
+		3E1B6A1CAAF7FFB6D12E53FB /* BarcodeScannerScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerScreen.swift; sourceTree = "<group>"; };
 		3FE03FC39F8ECF69BD7A606D /* LeicaDistoProtokollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeicaDistoProtokollTests.swift; sourceTree = "<group>"; };
 		422A56F5A018574166DC6061 /* FarbtemperaturAnalyse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FarbtemperaturAnalyse.swift; sourceTree = "<group>"; };
 		510EB2FED31BBDF9C302E04B /* RoomPlanListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomPlanListView.swift; sourceTree = "<group>"; };
@@ -175,6 +185,11 @@
 		186852CE426D30915D939FFB /* Werkzeuge */ = {
 			isa = PBXGroup;
 			children = (
+				0C5A4996BA9DEC198E8664B0 /* BarcodeLogListView.swift */,
+				02878E3BD01184779D0B8B7C /* BarcodeLogStore.swift */,
+				1BFD74D6F8CAEF909EF24D58 /* BarcodeScannerBridge.swift */,
+				3E1B6A1CAAF7FFB6D12E53FB /* BarcodeScannerScreen.swift */,
+				296F2A785BF2266776FFD040 /* BarcodeTreffer.swift */,
 				ECB8FF75EEAD7AE426081746 /* BeleuchtungsCheckView.swift */,
 				422A56F5A018574166DC6061 /* FarbtemperaturAnalyse.swift */,
 				9ABBCA0DDBC442E97B787AD3 /* FarbtemperaturCheckView.swift */,
@@ -518,6 +533,11 @@
 				7E9D26B4C5508D8D95F475E5 /* AufmassPDFRenderer.swift in Sources */,
 				179987552CDED6791C35FC4F /* AufmassStore.swift in Sources */,
 				1852C9914558A8456A1B1D35 /* BLEGeraet.swift in Sources */,
+				5326FEDBFC2D97E41EADE7B5 /* BarcodeLogListView.swift in Sources */,
+				86497978519B2820CDAB87E2 /* BarcodeLogStore.swift in Sources */,
+				D53C9C9EB5EF0FA8A8B74A56 /* BarcodeScannerBridge.swift in Sources */,
+				35686C8694F2C8BC4EDC1578 /* BarcodeScannerScreen.swift in Sources */,
+				F6AD9A4FDD45748B3852F666 /* BarcodeTreffer.swift in Sources */,
 				A21BEFEF9A960E03B55985E9 /* BeleuchtungsCheckView.swift in Sources */,
 				AD2FE7C82BF713699487F8D8 /* BemassungsRenderer.swift in Sources */,
 				C8D251A13255FD72701316FC /* BluetoothLaserScanner.swift in Sources */,
