@@ -1,73 +1,113 @@
 # Arbeitsstand — ehrlich, nicht schöngeredet
 
-**Stand: 2026-07-07, Nachtsession.** Diese Datei sagt, was WIRKLICH läuft (im
-Simulator gebaut/gestartet/getestet) vs. was nur compiliert vs. was noch fehlt.
-"Fertig" heißt hier nie mehr als "Build grün + Simulator-Screenshot" — echte
-Geräte-Verifikation (Bluetooth, Kamera, RoomPlan/LiDAR, Apple Pencil) steht noch
-komplett aus, weil der Simulator das nicht kann.
+**Stand: 2026-07-07, ~01:00 Uhr, Session-Ende (Rate-Limit-Handoff).**
 
-## Was echt verifiziert ist
+## Kontext dieser Session
 
-- **Build**: `xcodebuild build` gegen iPad Pro 13" (M5) Simulator, Swift 6 strict
-  concurrency, 0 Warnings/Errors.
-- **Tests**: 18 Unit-Tests (Geometrie-Fang, Aufmaß-Modell-Logik,
-  Leica-Protokoll-Parsing), alle grün — reine Logik, kein UI/Hardware.
-- **App startet im Simulator**: Navigation (Sidebar mit allen vier Modulen),
-  mykilOS-CI-Farben und die echte ABC-Monument-Grotesk-Schrift wurden per
-  Screenshot bestätigt (Font-Datei im App-Bundle nachgewiesen, nicht nur
-  angenommen).
-- **App-Icon**: offizielles mykilOS-"M"-Wortzeichen, auf dem Home-Bildschirm/
-  Dock des Simulators screenshotet.
-- **18 Unit-Tests grün**, **Grundriss-Liste** zum Wiederöffnen gespeicherter
-  Dokumente ergänzt.
+Johannes' Kritik am ersten Durchgang (wörtlich): "noch lange nicht auch nur einen
+Hauch so gut wie die iOS App... weder CI noch UX noch irgendwas beachtet, einfach
+kopierten Müll gebaut". Daraufhin wurde die Architektur neu aufgesetzt: echte
+mykilOS-IA (Sidebar/Breadcrumb statt Platzhalter-Liste), echte Projekt-Registry
+statt Freitext-Feldern, und ein systematischer Anlauf, **alle** ~113 Swift-Dateien
+aus mykilOS iOS (`myMini`) zu portieren, nicht nur den Aufmaß-Ausschnitt.
+Siehe Memory `feedback_full-parity-real-ux` — UNBEDINGT vor Weiterarbeit lesen.
 
-## Was NUR compiliert, aber nicht am Gerät getestet ist
+## Was echt verifiziert ist (Build grün + Simulator-Screenshot)
 
-- **Bluetooth-Laser** (`BluetoothLaserScanner`, `LaserAdapter`-Registry,
-  `LeicaDistoProtokoll`): Simulator hat kein CoreBluetooth-Radio — ungetestet
-  mit echter Hardware. Nur Leica DISTO hat ein echtes, doppelt bestätigtes
-  Protokoll; 11 weitere Hersteller sind nur Namens-Heuristik (siehe
-  `Sources/mykilOSiPad/Bluetooth/LaserAdapter.swift`, Kommentare).
-- **Kamera** (`KameraAufnahmeView`): Simulator hat keine echte Kamera —
-  ungetestet.
-- **RoomPlan/LiDAR**: Simulator kann keinen LiDAR-Scan — komplett ungetestet.
-  Die Geometrie-Extraktion (`RaumGeometrieExtractor`) ist laut eigenem
-  Kommentar "mathematisch plausibel, nicht live verifiziert" (Erbe aus
-  mykilOS iOS, dort ebenfalls nie an echtem Scan geprüft).
-- **Apple Pencil / PencilKit** (`PKCanvasRepresentable`, Freihand-Werkzeug in
-  `FotoBemassungView`): Simulator kann Pencil nicht emulieren (nur
-  Finger-/Maus-Zeichnen) — Druckempfindlichkeit, Palm-Rejection, Neigung
-  ungetestet.
-- **Grundriss-Editor**: Gesten (Ziehen/Zoom/Rückgängig) nur im Simulator per
-  Maus/Touch-Emulation geprüft, nicht am echten Multi-Touch-Display.
+- Xcode-Projekt (xcodegen, iPadOS 17+, Swift 6 strict concurrency)
+- Echte mykilOS-CI: ABC-Monument-Grotesk-Schrift, Farbtokens, offizielles
+  App-Icon (M-Wortzeichen)
+- **AppShell**: NavigationSplitView, schwarze Sidebar, nummerierte Sektionen
+  (01 Heute, 02 Fang, 03 Projekte, 04 Aufmaß, 05 Verbindungen), Breadcrumb
+  "MYKILOS / MODUL"
+- **Projekt-Registry**: echte 31 Kundenprojekte aus `projekte.json`,
+  ProjectListView/ProjectDetailView, Aufmaß/RoomPlan/Grundriss sind jetzt an
+  echte Projektwahl gekoppelt (nicht mehr Freitext)
+- **Grundriss-Editor**: manuelles 2D-Wände-Zeichnen (Raster/Magnet-Fang,
+  Bauelemente, Formen, Text, Rückgängig, PDF/DXF-Export)
+- **Foto-Bemaßung**: Zoom/Pan/Lupe, Maß/Notiz/Symbol/Winkel + neues
+  Apple-Pencil-Freihand-Werkzeug (PencilKit)
+- **RoomPlan/LiDAR-Aufmaß**: Scan, PDF/DXF-Grundrissexport
+- **Bluetooth-Laser-Registry**: 12 Hersteller, nur Leica DISTO echt
+  verifiziert (siehe `Sources/mykilOSiPad/Bluetooth/LaserAdapter.swift`)
+- **Fang-Workflow (NEU diese Session)**: PostboxStore/-View, FeldFotoStore/
+  -ListView/-BestaetigungView, FangCard (Text-Fang + Feld-Foto-Kamera),
+  EinmaligerOrtsSensor — ohne Sprachaufnahme/OCR (siehe unten)
+- 18 Unit-Tests grün (reine Logik: Geometrie, Aufmaß-Modell, Leica-Protokoll)
 
-## Bekannte Lücken / bewusst nicht gebaut
+**Letzter git-Commit**: `e36f5a4` "Postbox + FeldFoto-Fang-Workflow portiert
+(Task #15)", gepusht auf `main` @ github.com/JohannesLeoB/mykilOS-iPadOS.
+Build war zu diesem Stand grün (vor dem Commit verifiziert).
 
-- **Keine Projekt-/Kundenverwaltung.** Alle Module (Aufmaß, RoomPlan, Grundriss)
-  haben nur lose, freie Text-Zuordnung (Projekt/Raum), keine Anbindung an eine
-  Projektdatenbank — die gibt es für die iPad-App noch nicht (bewusste
-  Entscheidung, um nicht vorzeitig eine ganze Projektverwaltung nachzubauen,
-  bevor geklärt ist, ob/wie die iPad-App an weclapp/mykilOS-Ökosystem andockt).
-- **Kein Cloud-Sync / Mehrgeräte-Abgleich** — alles lokal in `Documents/`
-  (JSON-Manifeste + Bilddateien), gleiches Muster wie mykilOS iOS.
-- **Laser-Hersteller-Recherche** (Bosch, Einhell, Laserliner, Stanley, Worx
-  etc. — echte BLE-GATT-Protokolle statt nur Namens-Erkennung): als
-  Hintergrund-Recherche gestartet, bei Session-Ende **nicht abgeschlossen**
-  (kein Ergebnis in `docs/LASER_PROTOKOLL_RECHERCHE.md` — die Datei existiert
-  noch nicht). Ein erster Versuch brach ohne Ergebnis ab, ein zweiter lief
-  beim Schließen der Session noch. In einer Folge-Session prüfen, ob die
-  Datei inzwischen entstanden ist, sonst neu anstoßen.
-- **Grundriss-Editor "Formen"-Werkzeug**: bisher nur Schnell-Rechteck
-  (4 Wände aus einer Diagonalen), keine Freihand-Formen — bewusst minimal
-  gehalten, um kein halbfertiges Formen-System zu bauen.
+## Was NUR compiliert, nicht am Gerät getestet (Simulator kann's nicht)
 
-## Nächste sinnvolle Schritte
+Bluetooth-Kopplung, Kamera, RoomPlan/LiDAR, Apple Pencil (Druck/Neigung/
+Palm-Rejection), Multi-Touch-Gesten am echten Display, GPS/CoreLocation.
 
-1. Laser-Protokoll-Recherche abwarten und Ergebnis einarbeiten (Registry ggf.
-   um echte UUIDs für weitere Hersteller ergänzen, mit derselben
-   "kein Raten"-Doktrin wie beim Leica-Protokoll).
-2. Echte Geräte-Session: Bluetooth-Kopplung mit einem echten Lasermessgerät,
-   RoomPlan-Scan auf einem LiDAR-iPad, Apple-Pencil-Test.
-3. Launch-Screen-Feinschliff (App-Icon ist bereits erledigt).
-4. Entscheiden, ob/wie Projekt-Zuordnung an eine echte Datenquelle (weclapp?
-   lokale Projektliste wie in mykilOS iOS?) angebunden wird.
+## Was noch komplett fehlt — die verbleibenden ~90 der 113 mykilOS-iOS-Dateien
+
+Siehe TaskList (Tool `TaskList` bzw. die Aufgaben #16-19 unten), in
+Prioritätsreihenfolge:
+
+1. **Werkzeuge-Sammlung** (Task #16): WasserwaageView/-Sensor (Gyroskop-
+   Wasserwaage), Beleuchtungs-/Farbtemperatur-/Raumakustik-Check (schnelle
+   Sensor-Checks, alle on-device, keine externen Abhängigkeiten),
+   ARMassbandMesser/-Bridge/-Screen (einfaches AR-Maßband via ARKit),
+   BarcodeScannerBridge/-Screen/-LogView (VisionKit Live-Barcode),
+   WareneingangsLogStore/-ListView. Alle Dateien liegen in
+   `/Users/johannesleoberger/Claude/Projects/myMini/mykilos-mobile/myMini/mykilOS-mobile-KOMPLETT/`
+   (READ-ONLY, fremdes Repo — siehe KOORDINATEN.md) und sind meist
+   selbstständig portierbar (keine Cloud-Credentials nötig).
+2. **Abnahmeprotokoll + Vertragssignatur** (Task #17): AbnahmeprotokollView/
+   -Store/-PDFRenderer (Diktat-Mängelaufnahme — braucht
+   SpracheZuTextService, on-device Speech-Framework, kein Cloud-Call),
+   VertragSignierenView/VertragsSignatur (PencilKit-Unterschrift — direkt an
+   unser bestehendes `PKCanvasRepresentable`-Muster anschließbar).
+3. **Service-Anfrage + Kontakte** (Task #18): ServiceAnfrageView/-Kern,
+   KontakteVerzeichnisView/-Store/KundenKontakt, KontaktSchreiber — die
+   Kontakte-Anbindung braucht Airtable-Credentials (noch nicht portiert),
+   kann aber mit leerer/lokaler Liste starten.
+4. **OCR-Fang-Flows + AR-Anker** (Task #19): LieferscheinOCR/
+   -BestaetigungView, VisitenkartenOCR/-BestaetigungView (beide Vision-
+   Framework, on-device), ARAnkerScreen/-Bridge/GewerkeTyp.
+
+**Bewusst zurückgestellt** (brauchen externe Credentials/OAuth, die
+Johannes erst einrichten müsste): Google-Drive-Upload (GoogleDriveUploadClient,
+GoogleOAuthPKCEService, GoogleSignInSettingsView, GoogleCredentialsStore),
+Airtable-Postbox-Sync (AirtableClockodoPostboxClient, AirtablePostboxSettingsView,
+AirtableKundenClient), Claude-Assistent-Chat (ClaudeMessagesClient,
+AssistantChatView, ClaudeSettingsView), Geofencing/Standort-Wächter
+(GeofenceWaechter, StandortAufenthalt-System — bewusst niedrige Priorität,
+iPad wird seltener am Körper getragen als iPhone).
+
+**Laser-Hersteller-Recherche**: Ein Hintergrund-Agent sollte
+`docs/LASER_PROTOKOLL_RECHERCHE.md` befüllen (echte BLE-GATT-Protokolle für
+Bosch/Einhell/Laserliner/etc. statt nur Namens-Heuristik) — bei Session-Ende
+war die Datei noch NICHT entstanden. Zwei Versuche liefen, keiner hat
+sichtbar ein Ergebnis geschrieben. In der nächsten Session prüfen und ggf.
+neu anstoßen (Prompt-Vorlage siehe unten im Handoff).
+
+## Wichtige Lektionen aus dieser Session
+
+- **xcodegen 2.45.4-Eigenheit**: `resources:` als Top-Level-Key wird für das
+  App-Target komplett ignoriert (kein Fehler, einfach leer). Fix: Ressourcen
+  über `sources:` mit `buildPhase: resources` einbinden (siehe `project.yml`).
+- **GraphicsContext.draw() + Image**: `.font()`/`.foregroundColor()` auf
+  `Image` geben KEIN konkretes `Image` zurück (anders als bei `Text`) —
+  `context.draw(_:at:)` erwartet aber exakt `Image`. Lösung: entweder ohne
+  Modifier zeichnen oder `context.draw(_:in: CGRect)` mit vorbestimmter
+  Größe nutzen.
+- **CoreBluetooth/RoomPlan-Delegates + Swift 6 strict concurrency**: `class`
+  ist `@MainActor`, Delegate-Protokoll ist es nicht → Konformanz mit
+  `@preconcurrency` markieren (`@preconcurrency CBCentralManagerDelegate`
+  etc.), NICHT die iOS-Vorlage kopieren, die stattdessen `nonisolated` +
+  `Task { @MainActor in }`-Hopping nutzt (erzeugt Sendable-Warnings bei
+  `CBPeripheral`).
+- **Simulator-Flakiness**: `xcrun simctl install/boot` hängt gelegentlich
+  minutenlang oder schlägt mit obskuren Fehlern fehl. Fix: `killall -9
+  Simulator com.apple.CoreSimulator.CoreSimulatorService`, dann neu booten.
+- **Guard-Hook-Selbstschutz**: Das automatische Anlegen von
+  PreToolUse-Permission-Hooks (`.claude/guard-ipados.sh`, das eigene
+  Tool-Rechte einschränkt) wurde vom Auto-Mode-Classifier blockiert — zu
+  Recht, das ist Selbst-Modifikation der eigenen Befugnisse. Nur mit
+  explizitem Nutzer-Go anlegen.
